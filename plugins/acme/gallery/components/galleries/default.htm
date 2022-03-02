@@ -1,0 +1,43 @@
+{% set gallery = __SELF__.gallery %}
+<section class="gallery section" id="gallery">
+  <div class="wrap gallery__wrap">
+    <div class="title gallery__title title_pink">
+      <svg class="title__ico">
+        <use xlink:href="{{ 'assets/spritemap.svg#sprite-splash-left-p'|theme }}"></use>
+      </svg>
+      <h2 class="title__text">{{ gallery.title }}</h2>
+      <svg class="title__ico">
+        <use xlink:href="{{ 'assets/spritemap.svg#sprite-splash-right-p'|theme }}"></use>
+      </svg>
+    </div>
+    <div class="gallery__row">
+      <div class="gallery__slider swiper" data-js="gallery-slider">
+        <div class="swiper-wrapper gallery__slider-wrapper">
+          {% for image in gallery.gallery %}
+          {% set full = image.path %}
+          {% set poster = image.thumb(665, 430, {'mode': 'crop'}) %}
+          <div class="swiper-slide gallery__slide">
+            <a href="{{ full }}" class="gallery__slide-link" data-lightbox="roadtrip">
+              <picture>
+                <source srcset="{{ poster }}">
+                <img src="{{ poster }}" alt="{{ image.title ? image.title : image.disk_name }}" class="gallery__slide-image" />
+              </picture>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+        <button type="button" class="gallery__btn gallery__btn_prev" data-js-action="prev-slide">
+          <svg class="gallery__btn-arrow">
+            <use xlink:href="{{ 'assets/spritemap.svg#sprite-arrow-prev'|theme }}"></use>
+          </svg>
+        </button>
+        <button type="button" class="gallery__btn gallery__btn_next" data-js-action="next-slide">
+          <svg class="gallery__btn-arrow">
+            <use xlink:href="{{ 'assets/spritemap.svg#sprite-arrow-next'|theme }}"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+

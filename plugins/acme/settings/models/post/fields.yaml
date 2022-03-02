@@ -1,0 +1,63 @@
+fields:
+    name:
+        label: Заголовок
+        span: auto
+        type: text
+    date:
+        label: Дата
+        mode: date
+        span: auto
+        type: datepicker
+    is_published:
+        label: 'Опубликовать?'
+        span: full
+        type: switch
+tabs:
+    fields:
+        description:
+            label: Описание
+            size: giant
+            span: full
+            type: richeditor
+            tab: Содержание
+        poster:
+            label: 'Главное фото'
+            mode: image
+            imageWidth: '150'
+            imageHeight: '150'
+            span: auto
+            type: mediafinder
+            tab: Дополнительно
+        images:
+            label: Галерея
+            mode: image
+            imageWidth: '100'
+            imageHeight: '100'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: Дополнительно
+        tags:
+            label: 'Список тегов'
+            oc.commentPosition: below
+            mode: array
+            separator: comma
+            customTags: true
+            useKey: false
+            span: full
+            type: taglist
+            tab: Дополнительно
+        meta_name:
+            label: 'META заголовок'
+            span: full
+            type: text
+            tab: SEO
+        meta_description:
+            label: 'META описание'
+            size: tiny
+            span: full
+            type: textarea
+            tab: SEO

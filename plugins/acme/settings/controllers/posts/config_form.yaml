@@ -1,0 +1,10 @@
+name: Posts
+form: $/acme/settings/models/post/fields.yaml
+modelClass: Acme\Settings\Models\Post
+defaultRedirect: acme/settings/posts
+create:
+    redirect: 'acme/settings/posts/update/:id'
+    redirectClose: acme/settings/posts
+update:
+    redirect: acme/settings/posts
+    redirectClose: acme/settings/posts

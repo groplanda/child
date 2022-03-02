@@ -1,0 +1,4 @@
+title: Posts
+modelClass: Acme\Settings\Models\Post
+toolbar:
+    buttons: reorder_toolbar

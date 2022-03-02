@@ -1,0 +1,21 @@
+columns:
+    name:
+        label: Заголовок
+        type: text
+        searchable: true
+        sortable: true
+    is_published:
+        label: 'Активен?'
+        type: switch
+        searchable: true
+        sortable: true
+    date:
+        label: Дата
+        type: date
+        searchable: true
+        sortable: true
+    sort_order:
+        label: 'Порядок сортировки'
+        type: number
+        searchable: true
+        sortable: true

@@ -1,0 +1,6 @@
+name: Детские праздники
+description: 'Организация детских праздников'
+author: bardinteam
+homepage: bardinteam.ru
+code: ''
+form: config/fields.yaml

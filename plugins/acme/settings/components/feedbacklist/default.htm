@@ -1,0 +1,67 @@
+{% set feedbacks = __SELF__.feedbacks %}
+<section class="reviews section" id="reviews">
+  <div class="reviews__wrap wrap">
+    <div class="title title_yellow reviews__title">
+      <svg class="title__ico">
+        <use xlink:href="{{ 'assets/spritemap.svg#sprite-splash-left-p'|theme }}"></use>
+      </svg>
+      <h2 class="title__text title__text_white">Отзывы о нас</h2>
+      <svg class="title__ico">
+        <use xlink:href="{{ 'assets/spritemap.svg#sprite-splash-right-p'|theme }}"></use>
+      </svg>
+    </div>
+    <div class="reviews__list">
+      <div class="reviews__row reviews__row_mobile swiper" data-js="reviews-slider">
+        <div class="swiper-wrapper reviews__slider-wrapper">
+          {% for feedback in feedbacks %}
+          <div class="swiper-slide reviews__slide">
+            <div class="reviews__item">
+              <div class="reviews__item-content">
+                <p>
+                  {{ feedback.rewiew|raw }}
+                </p>
+                <svg class="reviews__item-polygon">
+                  <use xlink:href="{{ 'assets/spritemap.svg#sprite-polygon'|theme }}"></use>
+                </svg>
+              </div>
+              <div class="reviews__item-info">
+                <div class="reviews__item-title">{{feedback.subject}}</div>
+                <div class="reviews__item-name">{{feedback.name}}</div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="reviews__pagination"></div>
+        <button type="button" class="reviews__btn reviews__btn_prev" data-js-action="prev-slide">
+          <svg class="reviews__btn-arrow">
+            <use xlink:href="{{ 'assets/spritemap.svg#sprite-arrow-prev'|theme }}"></use>
+          </svg>
+        </button>
+        <button type="button" class="reviews__btn reviews__btn_next" data-js-action="next-slide">
+          <svg class="reviews__btn-arrow">
+            <use xlink:href="{{ 'assets/spritemap.svg#sprite-arrow-next'|theme }}"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="reviews__row reviews__row_desktop" id="reviews-masonry">
+        {% for feedback in feedbacks %}
+        <div class="reviews__item">
+          <div class="reviews__item-content">
+            <p>
+              {{ feedback.rewiew|raw }}
+            </p>
+            <svg class="reviews__item-polygon">
+              <use xlink:href="{{ 'assets/spritemap.svg#sprite-polygon'|theme }}"></use>
+            </svg>
+          </div>
+          <div class="reviews__item-info">
+            <div class="reviews__item-title">{{feedback.subject}}</div>
+            <div class="reviews__item-name">{{feedback.name}}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

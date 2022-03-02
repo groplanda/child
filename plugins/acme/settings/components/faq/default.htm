@@ -1,0 +1,40 @@
+{% set answers = __SELF__.answers %}
+<section class="faq section" id="{{ __SELF__.id }}">
+  <div class="faq__wrap wrap">
+    <div class="title faq__title title_white">
+      <svg class="title__ico">
+        <use xlink:href="{{ 'assets/spritemap.svg#sprite-splash-left-p'|theme }}"></use>
+      </svg>
+      <h2 class="title__text title__text_white">Ответы на частые вопросы</h2>
+      <svg class="title__ico">
+        <use xlink:href="{{ 'assets/spritemap.svg#sprite-splash-right-p'|theme }}"></use>
+      </svg>
+    </div>
+    <div class="faq__list">
+      {% for answer in answers %}
+      <div class="faq__list-item">
+        <div class="faq__list-head" data-question="head">
+          <div class="faq__list-title">
+            {{ answer.title }}
+            <button type="button" class="faq__list-toggle">
+              <svg class="faq__list-ico faq__list-ico_plus">
+                <use xlink:href="{{ 'assets/spritemap.svg#sprite-plus'|theme }}"></use>
+              </svg>
+              <svg class="faq__list-ico  faq__list-ico_minus">
+                <use xlink:href="{{ 'assets/spritemap.svg#sprite-minus'|theme }}"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="faq__list-body faq__list-body_hidden" data-question="body">
+          <div class="faq__list-text">
+            {{ answer.description|raw }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+

@@ -1,0 +1,43 @@
+{% set service = __SELF__.service %}
+<section class="section slider">
+  <div class="slider__wrap wrap">
+    <div class="slider__heading base-heading">
+      <h2 class="slider__title base-title">{{service.title }}</h2>
+    </div>
+    <div class="slider__description base-description">
+      {{service.description }}
+    </div>
+    <div class="slider__container">
+      <div class="slider__box">
+        <div class="swiper slider__swiper" data-js-slider="home-slider">
+          <div class="swiper-wrapper">
+            {% for item in service.services %}
+            <div class="swiper-slide slider__item">
+              <a href="{{ item.service_link }}" class="slider__item-title">{{ item.service_title|raw }}</a>
+              <p class="slider__item-description">{{ item.service_desc }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="slider__controls">
+          <button type="button" class="slider__arrow slider__arrow_prev" data-js-action="home-slider-prev">
+            <svg xmlns="http://www.w3.org/2000/svg" class="slider__arrow-ico" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <line x1="5" y1="12" x2="9" y2="16" />
+              <line x1="5" y1="12" x2="9" y2="8" />
+            </svg>
+          </button>
+          <button type="button" class="slider__arrow slider__arrow_next" data-js-action="home-slider-next">
+            <svg xmlns="http://www.w3.org/2000/svg" class="slider__arrow-ico" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <line x1="15" y1="16" x2="19" y2="12" />
+              <line x1="15" y1="8" x2="19" y2="12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

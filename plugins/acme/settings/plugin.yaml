@@ -1,0 +1,29 @@
+plugin:
+    name: 'acme.settings::lang.plugin.name'
+    description: 'acme.settings::lang.plugin.description'
+    author: Acme
+    icon: oc-icon-wrench
+    homepage: ''
+navigation:
+    settings:
+        label: Настройки
+        url: acme/settings/service
+        icon: icon-wrench
+        iconSvg: plugins/acme/settings/assets/images/settings-icon.svg
+        sideMenu:
+            service:
+                label: Услуги
+                url: acme/settings/service
+                icon: icon-cogs
+            side-menu-adv:
+                label: Преимущества
+                url: acme/settings/advantages
+                icon: icon-star
+            side-menu-faq:
+                label: 'Вопрос - ответ'
+                url: acme/settings/answers
+                icon: icon-question
+            side-menu-feedback:
+                label: Отзывы
+                url: acme/settings/feedback
+                icon: icon-comment

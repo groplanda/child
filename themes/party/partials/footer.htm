@@ -1,0 +1,60 @@
+description = "Footer"
+==
+<footer id="footer" class="footer section" itemscope itemtype="http://schema.org/Organization">
+  <div class="footer__wrap wrap">
+    <div class="footer__top">
+      <div class="footer__info">
+        <img itemprop="logo url" src="{{ 'assets/images/logo.png'|theme|resize(false,70) }}" alt="{{this.theme.site_name}}" title="{{this.theme.site_name}}" class="footer__logo" />
+        <span itemprop="name" hidden>{{this.theme.site_name}}</span>
+        <p class="footer__description">
+          {{ this.theme.site_description }}
+        </p>
+      </div>
+      <div class="footer__contacts">
+        <div class="footer__contacts-row">
+          <a href="tel:{{ this.theme.phone }}" class="footer__phone">
+            <svg class="footer__phone-icon">
+              <use xlink:href="{{ 'assets/spritemap.svg#sprite-phone'|theme }}"></use>
+            </svg>
+            <span itemprop="telephone">{{ this.theme.phone }}</span>
+          </a>
+          <button
+            type="button"
+            class="footer__callback button"
+            data-js-action="open-modal"
+            data-name="callback"
+            data-title="Заказать звонок"
+          >
+            Заказать звонок
+          </button>
+        </div>
+        <div class="footer__contacts-row">
+          <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="footer__address">
+            <span class="footer__address-label">Адрес: </span>
+            <span itemprop="addressLocality" class="footer__address-city">г. Москва</span>
+            <span class="footer__address-street">
+              <span itemprop="streetAddress">{{ this.theme.address }}</span>
+              <span itemprop="postalCode" class="footer__address-index" hidden>153000</span>
+            </span>
+          </div>
+        </div>
+        <div class="footer__contacts-row">
+          <a href="tel:{{ this.theme.t_email }}" class="footer__email" itemprop="email">
+            {{ this.theme.t_email }}
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copyright">© 2012-2022 sitename.ru Все права защищены</div>
+      <a
+        href="#!"
+        data-js-action="open-modal"
+        data-name="privacy"
+        class="footer__privacy"
+      >
+        Политика конфиденциальности
+      </a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,100 @@
+description = "Header"
+==
+
+<header class="header section">
+  <div class="wrap header__wrap">
+
+    <div class="header__logo">
+      <a href="/" class="header__logo-link">
+        <img
+          src="{{ 'assets/images/logo.png'|theme|resize(false,70) }}"
+          alt="{{this.theme.site_name}}"
+          title="{{this.theme.site_name}}"
+          class="header__logo-src"
+        />
+      </a>
+    </div>
+
+    <nav class="header__nav">
+      <div class="header__nav-item">
+        <a href="#animated" class="header__nav-link" data-scroll>Аниматоры</a>
+      </div>
+      <div class="header__nav-item">
+        <a href="#offers" class="header__nav-link" data-scroll>Цены</a>
+      </div>
+      <div class="header__nav-item">
+        <a href="#about" class="header__nav-link" data-scroll>О нас</a>
+      </div>
+      <div class="header__nav-item">
+        <a href="#reviews" class="header__nav-link" data-scroll>Отзывы</a>
+      </div>
+      <div class="header__nav-item">
+        <a href="#services" class="header__nav-link" data-scroll>Услуги</a>
+      </div>
+      <div class="header__nav-item">
+        <a href="#footer" class="header__nav-link" data-scroll>Контакты</a>
+      </div>
+    </nav>
+
+    <button
+      type="button"
+      data-js-action="open-modal"
+      data-name="callback"
+      data-title="Заказать звонок"
+      data-hidden="Заказать звонок"
+      class="header__callback button"
+    >
+      <svg class="header__callback-icon">
+        <use xlink:href="{{ 'assets/spritemap.svg#sprite-phone'|theme }}"></use>
+      </svg>
+      Заказать звонок
+    </button>
+
+    <a href="tel:{{ this.theme.phone }}" class="header__phone">
+      <svg class="header__phone-icon">
+        <use xlink:href="{{ 'assets/spritemap.svg#sprite-whatsapp'|theme }}"></use>
+      </svg>
+      {{ this.theme.phone }}
+    </a>
+
+    <button type="button" class="header__menu-toggle" data-js-action="toggle-menu"></button>
+
+  </div>
+
+  <div class="header__mobile" data-js="mobile-menu">
+    <div class="header__mobile-container">
+      <div class="header__mobile-menu">
+        <div class="header__mobile-menu-item">
+          <a href="#animated" class="header__mobile-menu-link" data-scroll>Аниматоры</a>
+        </div>
+        <div class="header__mobile-menu-item">
+          <a href="#about" class="header__mobile-menu-link" data-scroll>О нас</a>
+        </div>
+        <div class="header__mobile-menu-item">
+          <a href="#offers" class="header__mobile-menu-link" data-scroll>Цены</a>
+        </div>
+        <div class="header__mobile-menu-item">
+          <a href="#reviews" class="header__mobile-menu-link" data-scroll>Отзывы</a>
+        </div>
+        <div class="header__mobile-menu-item">
+          <a href="#services" class="header__mobile-menu-link" data-scroll>Услуги</a>
+        </div>
+        <div class="header__mobile-menu-item">
+          <a href="#footer" class="header__mobile-menu-link" data-scroll>Контакты</a>
+        </div>
+      </div>
+      <div class="header__mobile-consult">
+        <button
+          type="button"
+          class="header__mobile-callback button"
+          data-js-action="open-modal"
+          data-name="callback"
+          data-title="Заказать звонок"
+          data-hidden="Заказать звонок"
+        >
+          Заказать звонок
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

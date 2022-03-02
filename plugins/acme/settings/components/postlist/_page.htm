@@ -1,0 +1,26 @@
+<section class="section post post_list">
+  <div class="wrap post__wrap">
+    <div class="post__row">
+      {% for post in posts %}
+      <div class="post__row-item">
+        <div class="post__row-item-image">
+          <div class="post__row-item-inner">
+            <img src="{{ post.poster|media|resize(405, 218, { mode: 'crop', quality: '85' }) }}" alt="{{ post.name }}" class="post__row-item-src" />
+          </div>
+        </div>
+        <a href="{{ 'post'|page({ id: post.id }) }}" class="post__row-item-title">{{ post.name }}</a>
+        {% if post.date %}
+        <div class="post__row-item-date">{{ post.date|date("d.m.Y") }}г.</div>
+        {% endif %}
+        <div class="post__row-item-descr">
+          {% if post.description|length > 163 %}
+            {{ post.description|striptags|slice(0, 160) ~ '...'  }}
+          {% else %}
+            {{ post.description|raw  }}
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

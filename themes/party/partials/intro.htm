@@ -1,0 +1,47 @@
+<section class="intro section" style="background-image: url({{this.theme.site_bg|media}})">
+  <div class="wrap intro__wrap">
+    <div class="intro__inner">
+      <div class="intro__content">
+        <h1 class="intro__title">{{ this.theme.site_heading }}</h1>
+      </div>
+      <div class="intro__advantages">
+        <div class="intro__advantages-list">
+          <div class="intro__advantages-item">
+            <svg class="intro__advantages-check">
+              <use xlink:href="{{ 'assets/spritemap.svg#sprite-checkmark'|theme }}"></use>
+            </svg>
+            Аниматоры
+          </div>
+          <div class="intro__advantages-item">
+            <svg class="intro__advantages-check">
+              <use xlink:href="{{ 'assets/spritemap.svg#sprite-checkmark'|theme }}"></use>
+            </svg>
+            Шоу-программы
+          </div>
+          <div class="intro__advantages-item">
+            <svg class="intro__advantages-check">
+              <use xlink:href="{{ 'assets/spritemap.svg#sprite-checkmark'|theme }}"></use>
+            </svg>
+            Лучшие детские праздники в Москве
+          </div>
+        </div>
+        <div class="intro__advantages-bg"></div>
+      </div>
+    </div>
+    <div class="intro__callback">
+      <button
+        type="button"
+        class="intro__callback-btn button"
+        data-js-action="open-modal"
+        data-name="callback"
+        data-title="Получить консультацию"
+        data-hidden="Получить консультацию"
+      >
+        Получить консультацию
+      </button>
+    </div>
+  </div>
+  <div class="intro__overlay intro__overlay_color"></div>
+  <div class="intro__overlay intro__overlay_image"></div>
+</section>
+

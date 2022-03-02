@@ -1,0 +1,29 @@
+<section class="page section">
+  <div class="wrap page__wrap">
+    <div class="base-heading">
+      <h1 class="base-title page__base-title">{{ post.name }}</h1>
+    </div>
+    {% if post.date %}
+    <div class="page__post-date">{{ post.date|date("d.m.Y") }}г.</div>
+    {% endif %}
+    <div class="page__entry page__entry_post">
+      {{ post.description|raw }}
+    </div>
+    {% if post.images|length > 0 %}
+    <div class="page__gallery">
+      {% for image in post.images %}
+      {% set full = image.path %}
+      {% set poster = image.thumb(400, 400, {'mode': 'crop'}) %}
+      <a class="page__gallery-item" href="{{ full }}" data-lightbox="roadtrip">
+        <img src="{{ poster }}" alt="{{ image.title ? image.title : image.disk_name }}" class="page__gallery-img" />
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <div class="page__tags">
+      {% for tag in post.tags %}
+      <div class="page__tag-item">#{{ tag }}</div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

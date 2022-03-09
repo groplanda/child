@@ -1,0 +1,9 @@
+columns:
+    title:
+        label: Заголовок
+        type: text
+        sortable: true
+    sort_order:
+        label: 'Порядок сортировки'
+        type: number
+        sortable: true

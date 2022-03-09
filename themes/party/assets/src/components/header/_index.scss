@@ -163,6 +163,16 @@
     @media(min-width: 1200px) {
       margin-right: 0;
     }
+  }
+
+  &__phone-url {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__phone-val {
+    color: $black-color;
 
     &:hover {
       text-decoration: none;

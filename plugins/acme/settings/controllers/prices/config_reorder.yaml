@@ -1,0 +1,5 @@
+title: Prices
+modelClass: Acme\Settings\Models\Price
+nameFrom: title
+toolbar:
+    buttons: reorder_toolbar

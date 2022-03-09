@@ -1,31 +1,67 @@
 {% set service = __SELF__.service %}
 
-<div class="popup__title popup__title_lg">{{service.title|raw}}</div>
-<div class="popup__container">
-  <div class="special">
-    <div class="special__wrap">
-      {% for item in service.services %}
-
-      {% if loop.index == 1 or loop.index == 5 %}
-      <div class="special__col">
-      {% endif %}
-
-        <div class="special__item">
-          <div class="special__item-image">
-            <div class="special__item-bg" style="background-image: url('{{ item.service_image|media }}')"></div>
-          </div>
-          <div class="special__item-content">
-            <div class="special__item-title">{{ item.service_title|raw }}</div>
-            <div class="special__item-descr">{{ item.service_desc|raw }}</div>
-          </div>
-        </div>
-
-      {% if loop.index == 4 or loop.last %}
-      </div>
-      {% endif %}
-
-      {% endfor %}
+<section id="{{ service.description ? service.description : __SELF__.id }}" class="product section" data-js="product-wrap">
+  <div class="wrap product__wrap">
+    <div class="title title_pink product__title">
+      <svg class="title__ico">
+        <use xlink:href="{{ 'assets/spritemap.svg#sprite-splash-left-p'|theme }}"></use>
+      </svg>
+      <h2 class="title__text">{{service.title|raw}}</h2>
+      <svg class="title__ico">
+        <use xlink:href="{{ 'assets/spritemap.svg#sprite-splash-right-p'|theme }}"></use>
+      </svg>
     </div>
-    <button type="button" class="btn special__btn" data-js-action="open-modal" data-modal="callback">Оставьте заявку на получение льготы</button>
+    <div class="product__row">
+      <div class="swiper product__slider" data-js="product-slider">
+        <div class="swiper-wrapper product__slider-wrapper">
+          {% for row in service.services %}
+          <div class="swiper-slide product__item">
+            <div class="product__item-content">
+              <div class="product__item-picture">
+                {% if row.service_link %}
+                <div class="product__item-tag">{{ row.service_link }}</div>
+                {% endif %}
+                <picture>
+                  <source srcset="{{ row.service_image|media|resize(305, 244, { mode: 'crop', quality: '90' }) }}">
+                  <img
+                    src="{{ row.service_image|media|resize(305, 244, { mode: 'crop', quality: '90' }) }}"
+                    alt="{{ row.service_title }}"
+                    class="product__item-image"
+                  />
+                </picture>
+              </div>
+              <div class="product__item-body">
+                <div class="product__item-name">{{ row.service_title }}</div>
+                <div class="product__item-price">
+                  {{ row.service_desc|raw }}
+                </div>
+                <button
+                  type="button"
+                  class="product__item-button button"
+                  data-js-action="open-modal"
+                  data-name="callback"
+                  data-title="Заказать праздник"
+                  data-hidden="{{ row.service_title }}"
+                >
+                  Подробнее
+                </button>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="product__pagination"></div>
+        <button type="button" class="product__btn product__btn_prev" data-js-action="prev-slide">
+          <svg class="product__btn-arrow">
+            <use xlink:href="{{ 'assets/spritemap.svg#sprite-arrow-prev'|theme }}"></use>
+          </svg>
+        </button>
+        <button type="button" class="product__btn product__btn_next" data-js-action="next-slide">
+          <svg class="product__btn-arrow">
+            <use xlink:href="{{ 'assets/spritemap.svg#sprite-arrow-next'|theme }}"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
-</div>
+</section>

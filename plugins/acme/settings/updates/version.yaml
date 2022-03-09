@@ -72,3 +72,6 @@
 1.0.25:
     - 'Updated table acme_settings_feedback'
     - builder_table_update_acme_settings_feedback_5.php
+1.0.26:
+    - 'Created table acme_settings_prices'
+    - builder_table_create_acme_settings_prices.php

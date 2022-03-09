@@ -4,10 +4,11 @@ fields:
         span: full
         type: text
     description:
-        label: Описание
-        size: tiny
+        label: 'ID блока'
         span: full
-        type: textarea
+        placeholder: services
+        type: text
+        comment: 'уникальный id блока'
     services:
         label: Услуги
         prompt: Добавить
@@ -20,7 +21,7 @@ fields:
                     span: auto
                     type: text
                 service_link:
-                    label: Ссылка
+                    label: Тег
                     span: auto
                     type: text
                 service_image:
@@ -31,7 +32,14 @@ fields:
                     span: auto
                     type: mediafinder
                 service_desc:
+                    label: Цена
+                    span: auto
+                    placeholder: '2 300 руб. <span>/ 1 час</span>'
+                    default: '2 300 руб. <span>/ 1 час</span>'
+                    type: text
+                service_info:
                     label: Описание
                     size: large
-                    span: auto
+                    span: full
                     type: textarea
+                    comment: 'Только для слайдера'

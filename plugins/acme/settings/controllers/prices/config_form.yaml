@@ -1,0 +1,10 @@
+name: Prices
+form: $/acme/settings/models/price/fields.yaml
+modelClass: Acme\Settings\Models\Price
+defaultRedirect: acme/settings/prices
+create:
+    redirect: 'acme/settings/prices/update/:id'
+    redirectClose: acme/settings/prices
+update:
+    redirect: acme/settings/prices
+    redirectClose: acme/settings/prices

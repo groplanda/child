@@ -1,0 +1,81 @@
+{% set price = __SELF__.price %}
+<section class="offers section" id="{{ price.index ? price.index : __SELF__.id }}">
+  <div class="wrap offers__wrap">
+    <div class="title title_white offers__title">
+      <svg class="title__ico">
+        <use xlink:href="{{ 'assets/spritemap.svg#sprite-splash-left-p'|theme }}"></use>
+      </svg>
+      <h2 class="title__text">{{ price.title }}</h2>
+      <svg class="title__ico">
+        <use xlink:href="{{ 'assets/spritemap.svg#sprite-splash-right-p'|theme }}"></use>
+      </svg>
+    </div>
+    <p class="offers__description">
+      {{ price.description }}
+    </p>
+    <div class="offers__row">
+      <div class="offers__slider swiper" data-js="offers-slider">
+        <div class="swiper-wrapper offers__slider-wrapper">
+          {% for package in price.list %}
+          <div class="swiper-slide offers__slide">
+            <div class="offers__slide-content">
+              {% if package.is_hit %}
+              <div class="offers__slide-tag">Хит</div>
+              {% endif %}
+              <div class="offers__slide-top">
+                <div class="offers__slide-suptitle">{{ package.supname }}</div>
+                <div class="offers__slide-title" style="color: {{ package.color }}">{{ package.name }}</div>
+                <div class="offers__slide-list">
+                  {% for stat in package.stats %}
+                  <div class="offers__slide-item">
+                    <svg class="offers__slide-ico">
+                      <use xlink:href="{{ 'assets/spritemap.svg#sprite-checkmark2'|theme }}"></use>
+                    </svg>
+                    <span>
+                      {{ stat.infotext }}
+                    </span>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="offers__slide-bottom">
+                <div class="offers__slide-time">
+                  {{ package.time|raw }}
+                </div>
+                <div class="offers__slide-price">
+                  {% if package.sale_price %}
+                  {{ package.sale_price|number_format(0, '', ' ') }} руб.
+                  <del>{{ package.price|number_format(0, '', ' ') }} руб.</del>
+                  {% else %}
+                  {{ package.price|number_format(0, '', ' ') }} руб.
+                  {% endif %}
+                </div>
+                <button
+                  type="button"
+                  class="offers__slide-btn button"
+                  data-js-action="open-modal"
+                  data-name="callback"
+                  data-title="Заказать праздник"
+                  data-hidden="Пакет услуг: {{ package.name }}"
+                  >Заказать</button>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          </div>
+        </div>
+        <div class="offers__pagination"></div>
+        <button type="button" class="offers__btn offers__btn_prev" data-js-action="prev-slide">
+          <svg class="offers__btn-arrow">
+            <use xlink:href="{{ 'assets/spritemap.svg#sprite-arrow-prev'|theme }}"></use>
+          </svg>
+        </button>
+        <button type="button" class="offers__btn offers__btn_next" data-js-action="next-slide">
+          <svg class="offers__btn-arrow">
+            <use xlink:href="{{ 'assets/spritemap.svg#sprite-arrow-next'|theme }}"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

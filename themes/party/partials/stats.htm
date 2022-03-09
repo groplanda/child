@@ -1,46 +1,24 @@
 <div class="section stats">
   <div class="stats__wrap wrap">
     <div class="stats__row">
-      <div class="stats__item" style="background-color: #60cde1">
+      {% for count in this.theme.count %}
+      <div class="stats__item" style="background-color: {{ count.color ? count.color : '#60cde1' }}">
         <picture>
-          <source srcset="{{ 'assets/images/stats/stat1.svg'|theme }}">
-          <img src="{{ 'assets/images/stats/stat1.svg'|theme }}" alt="" class="stats__item-image" />
+          <source srcset="{{ count.icon|media }}">
+          <img
+            src="{{ count.icon|media }}"
+            alt="{{ count.title }}"
+            class="stats__item-image"
+          />
         </picture>
-        <div class="stats__number">+3 000</div>
+        <div class="stats__number">
+          {{ count.number }}
+        </div>
         <div class="stats__description">
-          Детских праздников
+          {{ count.title }}
         </div>
       </div>
-      <div class="stats__item" style="background-color: #ea4d96">
-        <picture>
-          <source srcset="{{ 'assets/images/stats/stat2.svg'|theme }}">
-          <img src="{{ 'assets/images/stats/stat2.svg'|theme }}" alt="" class="stats__item-image" />
-        </picture>
-        <div class="stats__number">+3 000</div>
-        <div class="stats__description">
-          Собственных костюмов
-        </div>
-      </div>
-      <div class="stats__item" style="background-color: #e094e4">
-        <picture>
-          <source srcset="{{ 'assets/images/stats/stat3.svg'|theme }}">
-          <img src="{{ 'assets/images/stats/stat3.svg'|theme }}" alt="" class="stats__item-image" />
-        </picture>
-        <div class="stats__number">+80 шт.</div>
-        <div class="stats__description">
-          Оригинального реквизита
-        </div>
-      </div>
-      <div class="stats__item" style="background-color: #f0b100">
-        <picture>
-          <source srcset="{{ 'assets/images/stats/stat4.svg'|theme }}">
-          <img src="{{ 'assets/images/stats/stat4.svg'|theme }}" alt="" class="stats__item-image" />
-        </picture>
-        <div class="stats__number">5 лет</div>
-        <div class="stats__description">
-          Опыт работы артистов
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </div>

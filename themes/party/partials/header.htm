@@ -50,12 +50,16 @@ description = "Header"
       Заказать звонок
     </button>
 
-    <a href="tel:{{ this.theme.phone }}" class="header__phone">
-      <svg class="header__phone-icon">
-        <use xlink:href="{{ 'assets/spritemap.svg#sprite-whatsapp'|theme }}"></use>
-      </svg>
-      {{ this.theme.phone }}
-    </a>
+    <div href="tel:{{ this.theme.phone }}" class="header__phone">
+      {% if this.theme.whatsapp %}
+      <a href="whatsapp://send?phone=+{{ this.theme.whatsapp }}" class="header__phone-url">
+        <svg class="header__phone-icon">
+          <use xlink:href="{{ 'assets/spritemap.svg#sprite-whatsapp'|theme }}"></use>
+        </svg>
+      </a>
+      {% endif %}
+      <a href="tel:{{ this.theme.phone }}" class="header__phone-val">{{ this.theme.phone }}</a>
+    </div>
 
     <button type="button" class="header__menu-toggle" data-js-action="toggle-menu"></button>
 

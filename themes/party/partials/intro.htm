@@ -6,24 +6,14 @@
       </div>
       <div class="intro__advantages">
         <div class="intro__advantages-list">
+          {% for intro in this.theme.site_intro %}
           <div class="intro__advantages-item">
             <svg class="intro__advantages-check">
               <use xlink:href="{{ 'assets/spritemap.svg#sprite-checkmark'|theme }}"></use>
             </svg>
-            Аниматоры
+            {{ intro.title }}
           </div>
-          <div class="intro__advantages-item">
-            <svg class="intro__advantages-check">
-              <use xlink:href="{{ 'assets/spritemap.svg#sprite-checkmark'|theme }}"></use>
-            </svg>
-            Шоу-программы
-          </div>
-          <div class="intro__advantages-item">
-            <svg class="intro__advantages-check">
-              <use xlink:href="{{ 'assets/spritemap.svg#sprite-checkmark'|theme }}"></use>
-            </svg>
-            Лучшие детские праздники в Москве
-          </div>
+          {% endfor %}
         </div>
         <div class="intro__advantages-bg"></div>
       </div>

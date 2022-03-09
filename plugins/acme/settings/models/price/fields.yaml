@@ -1,0 +1,72 @@
+fields:
+    title:
+        label: Заголовок
+        span: auto
+        type: text
+    index:
+        label: 'ID блока'
+        span: auto
+        placeholder: offers
+        default: offers
+        type: text
+    description:
+        label: Описание
+        size: small
+        span: full
+        type: textarea
+    list:
+        label: Пакеты
+        prompt: Добавить
+        style: default
+        span: full
+        type: repeater
+        form:
+            fields:
+                supname:
+                    label: 'Текст над заголовком'
+                    span: full
+                    default: 'Готовый пакет услуг'
+                    type: text
+                name:
+                    label: Заголовок
+                    span: auto
+                    type: text
+                color:
+                    label: 'Цвет заголовка'
+                    availableColors:
+                        - '#e780b0'
+                        - '#89208e'
+                        - '#60cde1'
+                        - '#fc923e'
+                    span: auto
+                    type: colorpicker
+                is_hit:
+                    label: 'Хит?'
+                    span: full
+                    type: switch
+                price:
+                    label: Цена
+                    span: auto
+                    type: number
+                sale_price:
+                    label: 'Цена по скидке'
+                    span: auto
+                    default: '0'
+                    type: number
+                stats:
+                    label: Инфо
+                    prompt: Добавить
+                    style: collapsed
+                    span: full
+                    type: repeater
+                    form:
+                        fields:
+                            infotext:
+                                label: Описание
+                                size: tiny
+                                span: full
+                                type: textarea
+                time:
+                    label: Продолжительность
+                    span: full
+                    type: text

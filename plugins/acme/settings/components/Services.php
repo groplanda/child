@@ -30,7 +30,7 @@ class Services extends ComponentBase
               'type'              => 'dropdown',
               'default'           => 'base',
               'placeholder' => 'Выберите тип',
-              'options'     => ['base'=>'По умолчанию', 'list'=>'Две колонки', 'special'=>'Слайдер']
+              'options'     => ['base'=>'Желтый фон', 'list'=>'Белый фон', 'special'=>'Слайдер']
             ]
         ];
 

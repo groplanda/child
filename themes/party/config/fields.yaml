@@ -4,7 +4,7 @@ tabs:
       - Контакты
       - Общие
       - Главная страница
-      - Этапы
+      - Цифры
   paneCssClass:
       0: first-tab
       1: second-tab
@@ -14,7 +14,7 @@ tabs:
       Контакты: icon-phone
       Общие: icon-cogs
       Главная страница: icon-home
-      Этапы: icon-paw
+      Цифры: icon-paw
   fields:
       phone:
           type: text
@@ -100,6 +100,17 @@ tabs:
         placeholder: Банкротство
         span: full
         tab: Общие
+      site_intro:
+        type: repeater
+        prompt: Преимущества фон
+        titleFrom: Преимущества
+        form:
+          fields:
+            title:
+              label: Текст
+              type: text
+              span: full
+        tab: Общие
       site_description:
         type: textarea
         label: Описание подвал
@@ -113,6 +124,32 @@ tabs:
         mode: image
         imageWidth: 200
         tab: Общие
+      count:
+        type: repeater
+        prompt: Цифры
+        titleFrom: Цифры
+        form:
+          fields:
+            title:
+              label: Заголовок
+              type: text
+              span: full
+            number:
+              label: Цифра
+              type: text
+              span: full
+            color:
+              label: Цвет фона
+              type: colorpicker
+              span: full
+              availableColors: ['#60cde1', '#ea4d96', '#e094e4', '#f0b100']
+            icon:
+              label: Иконка
+              type: mediafinder
+              mode: image
+              imageWidth: 100
+              span: full
+        tab: Цифры
       site_metrika:
         label: Коды метрик
         type: codeeditor

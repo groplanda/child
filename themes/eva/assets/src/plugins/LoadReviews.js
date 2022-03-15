@@ -12,7 +12,9 @@ export class LoadReviews {
   }
 
   init() {
-    this.button.addEventListener("click", this.getReviews.bind(this))
+    if (this.button) {
+      this.button.addEventListener("click", this.getReviews.bind(this));
+    }
   }
 
   async getReviews() {

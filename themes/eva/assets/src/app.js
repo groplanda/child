@@ -133,16 +133,16 @@ document.addEventListener('DOMContentLoaded', () => {
     new Cars(form, '[data-autocomplete]');
   })
 
-  const numbers = document.querySelectorAll('[data-js="number-index"]');
-
-  if (numbers) {
-    const title = document.querySelector('[data-js="number-count"]');
-    title.textContent = `${numbers.length} фактов`;
-
-    for(let i = 0; i < numbers.length; i++) {
-      numbers[i].textContent = i + 1;
+  function nubmerIndex() {
+    const numbers = document.querySelectorAll('[data-js="number-index"]');
+    if (numbers) {
+      const title = document.querySelector('[data-js="number-count"]');
+      title.textContent = `${numbers.length} фактов`;
+      for(let i = 0; i < numbers.length; i++) {
+        numbers[i].textContent = i + 1;
+      }
     }
-
   }
+  nubmerIndex();
 
 })

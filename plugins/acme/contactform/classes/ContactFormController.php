@@ -85,7 +85,7 @@ class ContactFormController extends Controller
       $query->save();
 
       //отправка на почту
-      Mail::send('acme.contactform::mail.message', $vars, function($message) {
+      Mail::send('acme.contactform::mail.' . $is_car_form ? 'car' : 'message' , $vars, function($message) {
 
           $message->to($this->getUserMail(), 'Admin Person');
           $message->subject('Сообщение с сайта');

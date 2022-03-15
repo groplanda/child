@@ -1,0 +1,55 @@
+<form class="modal-form" autocomplete="off" data-js-action="send-form" data-form="car">
+  <div class="modal-form__wrap">
+
+    <div class="modal-form__field">
+      <label for="user-name" class="modal-form__label">Ваше имя:</label>
+      <div class="modal-form__group">
+        <svg class="modal-form__icon">
+          <use xlink:href="{{ 'assets/spritemap.svg#sprite-user'|theme }}"></use>
+        </svg>
+        <input type="text" name="user_name" id="user-name" class="modal-form__input" placeholder="Иванов Иван" />
+        <span class="modal-form__error" data-error-for="user_name"></span>
+      </div>
+    </div>
+
+    <div class="modal-form__field">
+      <label for="user-tel" class="modal-form__label">Ваш телефон:</label>
+      <div class="modal-form__group">
+        <svg class="modal-form__icon">
+          <use xlink:href="{{ 'assets/spritemap.svg#sprite-form-phone'|theme }}"></use>
+        </svg>
+        <input type="tel" name="user_phone" id="user-tel" class="modal-form__input" placeholder="+7 (___) ___-__-__" data-js="phone" />
+        <span class="modal-form__error" data-error-for="user_phone"></span>
+      </div>
+    </div>
+
+    <div class="modal-form__field">
+      <label for="user-message" class="modal-form__label">Ваше сообщение:</label>
+      <div class="modal-form__group">
+        <svg class="modal-form__icon modal-form__icon_message">
+          <use xlink:href="{{ 'assets/spritemap.svg#sprite-chat'|theme }}"></use>
+        </svg>
+        <textarea name="user_message" id="user-message" class="modal-form__input modal-form__input_message" placeholder="Ваше сообщение"></textarea>
+        <span class="modal-form__error" data-error-for="user_message"></span>
+      </div>
+    </div>
+
+    <div class="modal-form__bottom">
+      <p class="modal-form__privacy">
+        Нажимая на кнопку, вы принимаете условия
+        <a
+          href="#!"
+          class="modal-form__privacy-link"
+          data-js-action="open-modal"
+          data-name="privacy"
+        >
+          политики
+        </a>
+        обработки персональных данных.
+      </p>
+      <input type="hidden" name="user_form" value="user" />
+      <button type="submit" class="button modal-form__submit">Отправить</button>
+    </div>
+
+  </div>
+</form>

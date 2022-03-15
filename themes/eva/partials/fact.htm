@@ -1,0 +1,22 @@
+description = "Факты"
+
+[advantage advantage3]
+advantageName = 3
+
+[advantage advantage4]
+advantageName = 4
+
+[viewBag]
+==
+<section class="fact section">
+  <div class="fact__wrap wrap">
+    <div class="fact__title title">
+      <div class="title__ghost" data-js="number-count">15 фактов</div>
+      <h2 class="title__text">Почему наши коврики предпочитают зимой и летом<span class="title__text-dot">?</span></h2>
+    </div>
+    <div class="fact__container">
+    {% component 'advantage3::number' %}
+    {% component 'advantage4::number' %}
+    </div>
+  </div>
+</section>

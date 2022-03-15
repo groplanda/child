@@ -1,14 +1,14 @@
 {% set feedbacks = __SELF__.feedbacks %}
 <section class="reviews section" id="reviews">
   <div class="reviews__wrap wrap">
-    <div class="title title_yellow reviews__title">
-      <svg class="title__ico">
-        <use xlink:href="{{ 'assets/spritemap.svg#sprite-splash-left-p'|theme }}"></use>
-      </svg>
-      <h2 class="title__text title__text_white">Отзывы о нас</h2>
-      <svg class="title__ico">
-        <use xlink:href="{{ 'assets/spritemap.svg#sprite-splash-right-p'|theme }}"></use>
-      </svg>
+    <div class="reviews__title title">
+      <div class="title__ghost">Отзывы о нас</div>
+      <h2 class="title__text">Что говорят клиенты<span class="title__text-dot">.</span></h2>
+      <p class="title__description">
+        Многие наши заказчики ценят наши коврики за хорошее качество и стильный дизайн.
+        Обычно к каждому заказу мы подходим максимально ответственно. За годы работы, мы накопили
+        большое портфолио и получили достаточное количество отзывов.
+      </p>
     </div>
     <div class="reviews__list">
       <div class="reviews__row reviews__row_mobile swiper" data-js="reviews-slider">
@@ -45,7 +45,7 @@
         </button>
       </div>
       <div class="reviews__row reviews__row_desktop" id="reviews-masonry">
-        {% for feedback in feedbacks %}
+        {% for feedback in feedbacks|slice(0, 4) %}
         <div class="reviews__item">
           <div class="reviews__item-content">
             <p>
@@ -62,6 +62,11 @@
         </div>
         {% endfor %}
       </div>
+      {% if feedbacks|length > 4 %}
+      <div class="reviews__loading">
+        <button type="button" class="button reviews__load" data-js="load-reviews" data-offset="4" data-total="{{feedbacks|length}}">Загрузить еще</button>
+      </div>
+      {% endif %}
     </div>
   </div>
 </section>

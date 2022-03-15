@@ -34,12 +34,11 @@ fields:
                 service_desc:
                     label: Цена
                     span: auto
-                    placeholder: '2 300 руб. <span>/ 1 час</span>'
-                    default: '2 300 руб. <span>/ 1 час</span>'
+                    placeholder: ''
+                    default: ''
                     type: text
                 service_info:
                     label: Описание
                     size: large
                     span: full
                     type: textarea
-                    comment: 'Только для слайдера'

@@ -14,7 +14,7 @@ class Feedback extends Model
 
     protected $dates = ['deleted_at'];
 
-    const SORT_ORDER = 'name';
+    const SORT_ORDER = 'sort_order';
 
     /**
      * @var string The database table used by the model.

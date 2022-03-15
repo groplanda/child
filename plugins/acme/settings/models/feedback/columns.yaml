@@ -23,3 +23,8 @@ columns:
         type: number
         searchable: true
         sortable: true
+    sort_order:
+        label: Порядок
+        type: number
+        searchable: true
+        sortable: true

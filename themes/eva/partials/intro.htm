@@ -1,0 +1,111 @@
+<section class="intro section" id="about">
+  <div class="wrap intro__wrap">
+    <div class="intro__content">
+      <h1 class="intro__title">{{ this.theme.site_heading }}</h1>
+      <p class="intro__description">
+        {{ this.theme.site_description }}
+      </p>
+      <p class="intro__gift">
+        Получите скидку 300 р. <br/>
+        на любой комплект:
+      </p>
+    </div>
+    <div class="intro__bottom">
+      <form class="form" autocomplete="off" data-js-action="send-form" data-form="car">
+        <div class="form__wrap">
+          <div class="form__group">
+            <svg class="form__icon">
+              <use xlink:href="{{ 'assets/spritemap.svg#sprite-form-phone'|theme }}"></use>
+            </svg>
+            <input type="tel" name="user_phone" class="form__input" placeholder="+7 (___) ___-__-__" data-js="phone" />
+            <span class="form__error" data-error-for="user_phone"></span>
+          </div>
+          <div class="form__group">
+            <svg class="form__icon">
+              <use xlink:href="{{ 'assets/spritemap.svg#sprite-form-car'|theme }}"></use>
+            </svg>
+            <input type="text" name="user_car" class="form__input" placeholder="Марка" data-autocomplete data-type="car" />
+            <span class="form__error" data-error-for="user_car"></span>
+            <div class="form__dropdown">
+              <div class="form__dropdown-inner" data-dropdown-for="user_car"></div>
+            </div>
+          </div>
+          <div class="form__group">
+            <svg class="form__icon">
+              <use xlink:href="{{ 'assets/spritemap.svg#sprite-form-car'|theme }}"></use>
+            </svg>
+            <input type="text" name="user_model" class="form__input" placeholder="Модель" data-autocomplete data-type="model" />
+            <span class="form__error" data-error-for="user_model"></span>
+            <div class="form__dropdown">
+              <div class="form__dropdown-inner" data-dropdown-for="user_model"></div>
+            </div>
+          </div>
+        </div>
+        <p class="form__privacy">
+          Нажимая на кнопку, вы принимаете условия <a href="#!" class="form__privacy-link" data-js-action="open-modal" data-name="privacy">политики</a> обработки персональных данных.
+        </p>
+        <input type="hidden" name="user_name" value="Новая заявка" />
+        <input type="hidden" name="user_form" value="car" />
+        <button type="submit" class="button form__submit">Получить скидку!</button>
+      </form>
+
+      <div class="intro__price">
+        <div class="intro__price-sale">2850 ₽</div>
+        <div class="intro__price-old">
+          <span class="intro__price-small">от</span> 2550 ₽
+        </div>
+      </div>
+    </div>
+    <div class="intro__bg">
+      <div class="intro__circle intro__circle_1"></div>
+      <div class="intro__circle intro__circle_2"></div>
+      <div class="intro__circle intro__circle_3"></div>
+      <div class="intro__circle intro__circle_4"></div>
+      <div class="intro__circle intro__circle_5"></div>
+
+      <picture>
+        <source>
+        <source srcset="{{ this.theme.site_bg|media|resize(600, 600, { mode: 'crop', quality: '90' }) }}">
+        <img src="{{ this.theme.site_bg|media|resize(600, 600, { mode: 'crop', quality: '90' }) }}" alt="{{this.theme.site_name}}" class="intro__bg-src" />
+      </picture>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="intro section" style="background-image: url({{this.theme.site_bg|media}})">
+  <div class="wrap intro__wrap">
+    <div class="intro__inner">
+      <div class="intro__content">
+        <h1 class="intro__title">{{ this.theme.site_heading }}</h1>
+      </div>
+      <div class="intro__advantages">
+        <div class="intro__advantages-list">
+          {% for intro in this.theme.site_intro %}
+          <div class="intro__advantages-item">
+            <svg class="intro__advantages-check">
+              <use xlink:href="{{ 'assets/spritemap.svg#sprite-checkmark'|theme }}"></use>
+            </svg>
+            {{ intro.title }}
+          </div>
+          {% endfor %}
+        </div>
+        <div class="intro__advantages-bg"></div>
+      </div>
+    </div>
+    <div class="intro__callback">
+      <button
+        type="button"
+        class="intro__callback-btn button"
+        data-js-action="open-modal"
+        data-name="callback"
+        data-title="Получить консультацию"
+        data-hidden="Получить консультацию"
+      >
+        Получить консультацию
+      </button>
+    </div>
+  </div>
+  <div class="intro__overlay intro__overlay_color"></div>
+  <div class="intro__overlay intro__overlay_image"></div>
+</section> -->
+

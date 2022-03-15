@@ -1,0 +1,72 @@
+.steps {
+  padding: 50px 0;
+
+  @media(min-width: 768px) {
+    padding: 60px 0;
+  }
+
+  @media(min-width: 992px) {
+    padding: 100px 0;
+  }
+
+  &__title-ghost {
+
+    @media(max-width: 480px) {
+      font-size: 32px;
+    }
+  }
+
+  &__container {
+    width: 100%;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+    @media(min-width: 768px) {
+      margin: 0 -15px;
+      justify-content: center;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+
+    @media(min-width: 768px) {
+      max-width: calc(50% - 30px);
+      margin: 0 15px 30px;
+    }
+
+    @media(min-width: 992px) {
+      max-width: calc(25% - 30px);
+      margin: 0 15px;
+    }
+  }
+
+  &__item-image {
+    width: auto;
+    height: 60px;
+    margin-bottom: 10px;
+
+    @media(min-width: 768px) {
+      height: 84px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__item-descr {
+    text-align: center;
+    font-size: 16px;
+    max-width: 210px;
+  }
+}

@@ -1,55 +1,43 @@
 {% set service = __SELF__.service %}
-<section class="list section" id="{{ service.description ? service.description : __SELF__.id }}">
-  <div class="wrap list__wrap">
-    <button type="button" class="list__btn list__btn_prev" data-js-action="prev-slide">
-      <svg class="list__btn-arrow">
-        <use xlink:href="{{ 'assets/spritemap.svg#sprite-arrow-prev'|theme }}"></use>
-      </svg>
-    </button>
-    <button type="button" class="list__btn list__btn_next" data-js-action="next-slide">
-      <svg class="list__btn-arrow">
-        <use xlink:href="{{ 'assets/spritemap.svg#sprite-arrow-next'|theme }}"></use>
-      </svg>
-    </button>
-    <div class="list__slider swiper" data-js="list-slider">
-      <div class="swiper-wrapper list__slider-wrapper">
+<section class="service section" id="{{ service.description ? service.description : __SELF__.id }}">
+  <div class="service__wrap wrap">
+    <div class="service__title title">
+      <div class="title__ghost">Наши услуги</div>
+      <h2 class="title__text">{{ service.title|raw }}</h2>
+    </div>
+    <div class="service__container">
+      <div class="service__row">
         {% for row in service.services %}
-        <div class="swiper-slide list__slide">
-          <div class="list__slide-content">
-            <div class="list__slide-info">
-              <div class="list__slide-title">
-                {{ row.service_title }}
-              </div>
-              <p class="list__slide-descr">
-                {{ row.service_desc|raw }}
-                {{ row.service_info|raw }}
-              </p>
+        <div class="service__item">
+          <div class="service__item-picture">
+            <picture>
+              <source srcset="{{ row.service_image|media|resize(270, 270, { mode: 'crop', quality: '90' }) }}">
+              <img
+                src="{{ row.service_image|media|resize(270, 270, { mode: 'crop', quality: '90' }) }}"
+                alt="{{ row.service_title }}" class="service__item-image"
+              />
+            </picture>
+            <div class="service__item-circle"></div>
+          </div>
+          <div class="service__item-content">
+            <div class="service__item-name">{{ row.service_title }}</div>
+            <div class="service__item-descr">
+              {{ row.service_desc|raw }}
+            </div>
               <button
-                type="button"
-                class="list__slide-button button"
-                data-js-action="open-modal"
-                data-name="callback"
-                data-title="Заказать праздник"
-                data-hidden="{{ row.service_title }}"
-              >
-                Заказать
-              </button>
-            </div>
-            <div class="list__slide-picture">
-              <picture>
-                <source srcset="{{ row.service_image|media|resize(200, 200, { mode: 'crop', quality: '90' }) }}">
-                <img
-                  src="{{ row.service_image|media|resize(200, 200, { mode: 'crop', quality: '90' }) }}"
-                  alt="{{ row.service_title }}"
-                  class="list__slide-image"
-                />
-              </picture>
-            </div>
+              type="button"
+              class="service__item-button button"
+              data-js-action="open-modal"
+              data-name="callback"
+              data-hidden="{{ row.service_title }}"
+            >
+              Пригласить
+            </button>
           </div>
         </div>
         {% endfor %}
       </div>
-      <div class="list__pagination"></div>
     </div>
+
   </div>
 </section>

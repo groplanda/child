@@ -1,0 +1,94 @@
+description = "Header"
+==
+
+<header class="header section">
+  <div class="header__wrap wrap">
+    <div class="header__logo">
+      <picture>
+        <source media="(max-width: 767px)" srcset="{{ this.theme.logo_mobile|media }}" >
+        <source media="(min-width: 768px)" srcset="{{ this.theme.logo_full|media|resize(170, false) }}" >
+        <img src="{{ this.theme.logo_full|media|resize(170, false) }}" alt="{{this.theme.site_name}}" class="header__logo-src" />
+      </picture>
+    </div>
+    <nav class="header__nav">
+      <div class="header__nav-item">
+        <a href="#about" class="header__nav-link" data-scroll>О нас</a>
+      </div>
+      <div class="header__nav-item">
+        <a href="#why" class="header__nav-link" data-scroll>Почему мы</a>
+      </div>
+      <div class="header__nav-item">
+        <a href="#services" class="header__nav-link" data-scroll>Услуги</a>
+      </div>
+      <div class="header__nav-item">
+        <a href="#reviews" class="header__nav-link" data-scroll>Отзывы</a>
+      </div>
+      <div class="header__nav-item">
+        <a href="#gallery" class="header__nav-link" data-scroll>Фото</a>
+      </div>
+      <div class="header__nav-item">
+        <a href="#footer" class="header__nav-link" data-scroll>Контакты</a>
+      </div>
+    </nav>
+    <div class="header__contact">
+      {% partial "phone" %}
+      <a href="tel:{{ this.theme.phone }}" class="header__contact-phone">{{ this.theme.phone }}</a>
+      <a
+        href="#!"
+        class="header__contact-callback"
+        data-js-action="open-modal"
+        data-name="callback"
+        data-title="Заказать звонок"
+      >
+        Обратный звонок
+      </a>
+    </div>
+    {% partial "messenger" class="" %}
+    <div class="header__menu">
+      <button type="button" class="header__menu-toggle" data-js-action="toggle-menu"></button>
+    </div>
+  </div>
+  <div class="header__mobile" data-js="mobile-menu">
+    <div class="header__mobile-container">
+      <div class="header__mobile-menu">
+        <div class="header__mobile-menu-item">
+          <a href="#about" class="header__mobile-menu-link" data-scroll>О нас</a>
+        </div>
+        <div class="header__mobile-menu-item">
+          <a href="#why" class="header__mobile-menu-link" data-scroll>Почему мы</a>
+        </div>
+        <div class="header__mobile-menu-item">
+          <a href="#services" class="header__mobile-menu-link" data-scroll>Услуги</a>
+        </div>
+        <div class="header__mobile-menu-item">
+          <a href="#reviews" class="header__mobile-menu-link" data-scroll>Отзывы</a>
+        </div>
+        <div class="header__mobile-menu-item">
+          <a href="#gallery" class="header__mobile-menu-link" data-scroll>Фото</a>
+        </div>
+        <div class="header__mobile-menu-item">
+          <a href="#footer" class="header__mobile-menu-link" data-scroll>Контакты</a>
+        </div>
+      </div>
+      <div class="header__mobile-contact">
+        <div class="header__mobile-item">
+          <svg class="header__mobile-ico">
+            <use xlink:href="{{ 'assets/spritemap.svg#sprite-geo'|theme }}"></use>
+          </svg>
+          <div class="header__mobile-description">
+            {{ this.theme.city }}, {{ this.theme.address }}
+          </div>
+        </div>
+        <div class="header__mobile-item">
+          <svg class="header__mobile-ico">
+            <use xlink:href="{{ 'assets/spritemap.svg#sprite-email'|theme }}"></use>
+          </svg>
+          <a href="mailto:{{ this.theme.t_email }}" class="header__mobile-description">
+            {{ this.theme.t_email }}
+          </a>
+        </div>
+        {% partial "messenger" class="header__messenger_mobile" %}
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,23 @@
+<div class="header__messenger {{ class }}">
+  {% if this.theme.vk %}
+  <a class="header__messenger-link" href="{{ this.theme.vk }}" aria-label="Ссылка на vk.com" target="_blank" title="vk.com">
+    <svg class="header__messenger-ico header__messenger-ico_vk">
+      <use xlink:href="{{ 'assets/spritemap.svg#sprite-social-vk'|theme }}"></use>
+    </svg>
+  </a>
+  {% endif %}
+  {% if this.theme.whatsapp %}
+  <a class="header__messenger-link" href="whatsapp://send?phone=+{{ this.theme.whatsapp }}" aria-label="Ссылка на whatsapp" title="whatsapp">
+    <svg class="header__messenger-ico">
+      <use xlink:href="{{ 'assets/spritemap.svg#sprite-social-whatsapp'|theme }}"></use>
+    </svg>
+  </a>
+  {% endif %}
+  {% if this.theme.youtube %}
+  <a class="header__messenger-link" href="{{ this.theme.youtube }}" aria-label="Ссылка на youtube.com" target="_blank" title="youtube.com">
+    <svg class="header__messenger-ico">
+      <use xlink:href="{{ 'assets/spritemap.svg#sprite-social-youtube'|theme }}"></use>
+    </svg>
+  </a>
+  {% endif %}
+</div>

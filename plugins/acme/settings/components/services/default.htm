@@ -1,67 +1,43 @@
 {% set service = __SELF__.service %}
-<section class="animated section" id="{{ service.description ? service.description : __SELF__.id }}">
-  <div class="wrap animated__wrap">
-    <div class="title title_pink">
-      <svg class="title__ico">
-        <use xlink:href="{{ 'assets/spritemap.svg#sprite-splash-left-p'|theme }}"></use>
-      </svg>
-      <h2 class="title__text title__text_white">
-        {{ service.title|raw }}
-      </h2>
-      <svg class="title__ico">
-        <use xlink:href="{{ 'assets/spritemap.svg#sprite-splash-right-p'|theme }}"></use>
-      </svg>
+<section class="service section" id="{{ service.description ? service.description : __SELF__.id }}">
+  <div class="service__wrap wrap">
+    <div class="service__title title">
+      <div class="title__ghost">Наши услуги</div>
+      <h2 class="title__text">{{ service.title|raw }}</h2>
     </div>
-    <div class="animated__row">
-      <div class="swiper animated__slider" data-js="animated-slider">
-        <div class="swiper-wrapper animated__slider-wrapper">
-          {% for row in service.services %}
-          <div class="swiper-slide animated__item">
-            <div class="animated__item-content">
-              <div class="animated__item-picture">
-                {% if row.service_link %}
-                <div class="animated__item-tag">{{ row.service_link }}</div>
-                {% endif %}
-                <picture>
-                  <source srcset="{{ row.service_image|media|resize(305, 244, { mode: 'crop', quality: '90' }) }}">
-                  <img
-                    src="{{ row.service_image|media|resize(305, 244, { mode: 'crop', quality: '90' }) }}"
-                    alt="{{ row.service_title }}" class="animated__item-image"
-                  />
-                </picture>
-              </div>
-              <div class="animated__item-body">
-                <div class="animated__item-name">{{ row.service_title }}</div>
-                <div class="animated__item-price">
-                  {{ row.service_desc|raw }}
-                </div>
-                <button
-                  type="button"
-                  class="animated__item-button button"
-                  data-js-action="open-modal"
-                  data-name="callback"
-                  data-title="Заказать праздник"
-                  data-hidden="{{ row.service_title }}"
-                >
-                  Пригласить
-                </button>
-              </div>
-            </div>
+    <div class="service__container">
+      <div class="service__row">
+        {% for row in service.services %}
+        <div class="service__item">
+          <div class="service__item-picture">
+            <picture>
+              <source srcset="{{ row.service_image|media|resize(270, 270, { mode: 'crop', quality: '90' }) }}">
+              <img
+                src="{{ row.service_image|media|resize(270, 270, { mode: 'crop', quality: '90' }) }}"
+                alt="{{ row.service_title }}" class="service__item-image"
+              />
+            </picture>
+            <div class="service__item-circle"></div>
           </div>
-          {% endfor %}
+          <div class="service__item-content">
+            <div class="service__item-name">{{ row.service_title }}</div>
+            <div class="service__item-descr">
+              {{ row.service_desc|raw }}
+            </div>
+              <button
+              type="button"
+              class="service__item-button button"
+              data-js-action="open-modal"
+              data-name="callback"
+              data-hidden="{{ row.service_title }}"
+            >
+              Пригласить
+            </button>
+          </div>
         </div>
-        <div class="animated__pagination"></div>
-        <button type="button" class="animated__btn animated__btn_prev" data-js-action="prev-slide">
-          <svg class="animated__btn-arrow">
-            <use xlink:href="{{ 'assets/spritemap.svg#sprite-arrow-prev'|theme }}"></use>
-          </svg>
-        </button>
-        <button type="button" class="animated__btn animated__btn_next" data-js-action="next-slide">
-          <svg class="animated__btn-arrow">
-            <use xlink:href="{{ 'assets/spritemap.svg#sprite-arrow-next'|theme }}"></use>
-          </svg>
-        </button>
+        {% endfor %}
       </div>
     </div>
+
   </div>
 </section>

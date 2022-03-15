@@ -1,0 +1,51 @@
+description = "Homepage"
+
+[viewBag]
+
+[advantage]
+advantageName = 1
+
+[feedbacklist]
+maxFeeds = 0
+feedType = "list"
+sortOrder = "asc"
+
+[galleries]
+galleryName = 1
+galleryType = "slider"
+
+[advantage advantage2]
+advantageName = 2
+
+[services]
+serviceName = 5
+servicesType = "list"
+==
+<!DOCTYPE html>
+<html lang="ru">
+  {% partial "meta" %}
+  <body>
+    <!-- Header -->
+    {% partial "loading" %}
+    {% partial "header" %}
+    <!-- Content -->
+    <main class="main">
+      {% partial "intro" %}
+      {% component 'advantage' %}
+      {% component 'services' %}
+      {% partial "fact" %}
+      {% partial "contact" %}
+      {% component 'feedbacklist' %}
+      {% component 'advantage2::hero' %}
+      {% component 'galleries' %}
+      {% partial "message" %}
+    </main>
+    <!-- Footer -->
+    {% partial "footer" %}
+    {% partial "modal" %}
+    {% partial "scripts" %}
+    {% if this.theme.site_metrika|length > 0 %}
+    {{ this.theme.site_metrika|raw }}
+    {% endif %}
+  </body>
+</html>

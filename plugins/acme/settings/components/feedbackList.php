@@ -31,7 +31,7 @@ class feedbackList extends \Cms\Classes\ComponentBase
                 'default'           => 'list',
                 'placeholder'       => 'Выберите тип',
                 'options'           => ['list' => 'Список', 'grid' => 'Колонки']
-        
+
             ],
             'sortOrder' => [
               'title'             => 'Сортировка',
@@ -48,12 +48,12 @@ class feedbackList extends \Cms\Classes\ComponentBase
       $prop = $this->property('maxFeeds');
       $sort = $this->property('sortOrder');
 
-      $query = Feedback::where('status', '=', 1)->orderBy('id', $sort)->get();
+      $query = Feedback::where('status', '=', 1)->orderBy('sort_order', $sort)->get();
 
       if($prop != 0) {
 
-        $query = Feedback::where('status', '=', 1)->orderBy('id', $sort)->take($prop)->get();
-        
+        $query = Feedback::where('status', '=', 1)->orderBy('sort_order', $sort)->take($prop)->get();
+
       }
 
       return $query;
@@ -62,7 +62,6 @@ class feedbackList extends \Cms\Classes\ComponentBase
 
     public function onRun()
     {
-        $this->addJs('/plugins/acme/settings/assets/js/tabs.js');
         $this->feedbacks = $this->getFeedbacks();
 
     }
@@ -72,6 +71,6 @@ class feedbackList extends \Cms\Classes\ComponentBase
         $view = $this->property('feedType');
         if($view != 'list') {
             return $this->renderPartial('@_grid.htm');
-        }  
+        }
     }
 }

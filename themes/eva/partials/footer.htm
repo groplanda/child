@@ -1,0 +1,102 @@
+description = "Footer"
+==
+<footer id="footer" class="footer section" itemscope itemtype="http://schema.org/Organization">
+  <div class="footer__top">
+    <div class="footer__wrap wrap">
+      <div class="footer__title title">
+        <div class="title__ghost">Контакты</div>
+        <h2 class="title__text">
+          Как с нами связаться<span class="title__text-dot">.</span>
+        </h2>
+      </div>
+      <div class="footer__row">
+        <div class="footer__content">
+
+          <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="footer__item">
+            <div class="footer__item-label">Адрес:</div>
+            <div class="footer__item-description">
+              <span itemprop="addressLocality" class="footer__address-city">{{ this.theme.city }}</span>,
+              <span class="footer__address-street">
+                <span itemprop="streetAddress">{{ this.theme.address }}</span>
+                <span itemprop="postalCode" class="footer__address-index" hidden>{{ this.theme.post_code }}</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="footer__item">
+            <div class="footer__item-label">Телефон:</div>
+            <a href="tel:{{ this.theme.phone }}" class="footer__phone">
+              <span itemprop="telephone">{{ this.theme.phone }}</span>
+            </a>
+          </div>
+
+          <div class="footer__item">
+            <div class="footer__item-label">Email:</div>
+            <a href="mailto:{{ this.theme.t_email }}" class="footer__email" itemprop="email">
+              {{ this.theme.t_email }}
+            </a>
+          </div>
+
+          <div class="footer__item">
+            <div class="footer__item-label">Мы в соц. сетях</div>
+            <div class="footer__messenger">
+              {% if this.theme.vk %}
+              <a class="footer__messenger-link" href="{{ this.theme.vk }}" aria-label="Ссылка на vk.com" target="_blank" title="vk.com">
+                <svg class="footer__messenger-ico footer__messenger-ico_vk">
+                  <use xlink:href="{{ 'assets/spritemap.svg#sprite-social-vk'|theme }}"></use>
+                </svg>
+              </a>
+              {% endif %}
+              {% if this.theme.whatsapp %}
+              <a class="footer__messenger-link" href="whatsapp://send?phone=+{{ this.theme.whatsapp }}" aria-label="Ссылка на whatsapp" title="whatsapp">
+                <svg class="footer__messenger-ico">
+                  <use xlink:href="{{ 'assets/spritemap.svg#sprite-social-whatsapp'|theme }}"></use>
+                </svg>
+              </a>
+              {% endif %}
+              {% if this.theme.youtube %}
+              <a class="footer__messenger-link" href="{{ this.theme.youtube }}" aria-label="Ссылка на youtube.com" target="_blank" title="youtube.com">
+                <svg class="footer__messenger-ico">
+                  <use xlink:href="{{ 'assets/spritemap.svg#sprite-social-youtube'|theme }}"></use>
+                </svg>
+              </a>
+              {% endif %}
+            </div>
+          </div>
+
+
+        </div>
+        <div class="footer__map">
+          {{ this.theme.map|raw }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="footer__wrap wrap">
+      <div class="footer__logo">
+        <picture>
+          <source media="(max-width: 767px)" srcset="{{ this.theme.logo_mobile|media }}" >
+          <source media="(min-width: 768px)" srcset="{{ this.theme.logo_full|media|resize(170, false) }}" >
+          <img src="{{ this.theme.logo_full|media|resize(170, false) }}" alt="{{this.theme.site_name}}" class="footer__logo-src" />
+        </picture>
+        <span itemprop="name" hidden>{{this.theme.site_name}}</span>
+      </div>
+      <div class="footer__info">
+        <p class="footer__copyrigth">
+          © luxkovry.ru 2022. <br>
+          Все права защищены
+        </p>
+        <a
+          href="#!"
+          data-js-action="open-modal"
+          data-name="privacy"
+          class="footer__privacy"
+        >
+          Политика конфиденциальности
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>

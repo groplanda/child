@@ -1,17 +1,12 @@
 {% set advantage = __SELF__.advantages %}
-<section class="section why">
+<section id="why" class="section why">
   <div class="why__wrap wrap">
-    <div class="title title_yellow why__title">
-      <svg class="title__ico">
-        <use xlink:href="{{ 'assets/spritemap.svg#sprite-splash-left-p'|theme }}"></use>
-      </svg>
-      <h2 class="title__text">{{ advantage.title }}</h2>
-      <svg class="title__ico">
-        <use xlink:href="{{ 'assets/spritemap.svg#sprite-splash-right-p'|theme }}"></use>
-      </svg>
+    <div class="why__title title">
+      <div class="title__ghost">Преимущества</div>
+      <h2 class="title__text">{{advantage.title}}<span class="title__text-dot">.</span></h2>
     </div>
-    <div class="why__row">
-      <div class="why__list">
+    <div class="why__container">
+      <div class="why__row">
         {% for row in advantage.advantages %}
         <div class="why__item">
           <div class="why__item-picture">
@@ -20,17 +15,11 @@
               <img src="{{ row.a_ico|media }}" alt="{{ row.a_title }}" class="why__item-image" />
             </picture>
           </div>
-          <div class="why__item-descr">
+          <p class="why__item-descr">
             {{ row.a_title }}
-          </div>
+          </p>
         </div>
         {% endfor %}
-      </div>
-      <div class="why__image">
-        <picture>
-          <source srcset="{{ advantage.image|media }}">
-          <img src="{{ advantage.image|media }}" alt="{{ advantage.title }}" class="why__image-src" />
-        </picture>
       </div>
     </div>
   </div>

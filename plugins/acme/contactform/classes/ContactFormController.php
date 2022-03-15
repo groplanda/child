@@ -28,14 +28,30 @@ class ContactFormController extends Controller
       'user_message' => 'max:1000'
     ];
 
+    $car_rules = [
+      'user_phone' => 'required|min:5|max:50',
+      'user_car'  => 'required',
+      'user_model' => 'required',
+    ];
+
     $messages = [
       'required' => 'Поле обязательно к заполнению!',
       'min'      => 'Минимум :min символов!',
       'max'      => 'Максимум :max символов!',
-      'email'    => 'Некорректный e-mail'
+      'email'    => 'Некорректный e-mail',
+      'user_phone.required' => 'Укажите номер',
+      'user_car.required' => 'Выберите марку авто',
+      'user_model.required' => 'Выберите модель авто'
     ];
 
-    $validator = Validator::make($request->all(), $rules, $messages);
+    $is_car_form = $request->get('user_form') === "car";
+
+    if ($is_car_form) {
+      $validator = Validator::make($request->all(), $car_rules, $messages);
+    } else {
+      $validator = Validator::make($request->all(), $rules, $messages);
+    }
+
     //если не прошло валидацию
     if ($validator->fails()) {
 
@@ -56,7 +72,13 @@ class ContactFormController extends Controller
       $query->user_name = $request->get('user_name');
       $query->user_phone = $request->get('user_phone');
       $query->user_mail = $request->get('user_email');
-      $query->user_message = $request->get('user_message');
+
+      if ($is_car_form) {
+        $query->user_message = $request->get('user_car') . ' - ' .$request->get('user_model');
+      } else {
+        $query->user_message = $request->get('user_message');
+      }
+
       $query->user_ip = $_SERVER["REMOTE_ADDR"];
       $query->user_status = 1;
       $query->created_at = time();

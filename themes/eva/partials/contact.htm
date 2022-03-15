@@ -1,0 +1,47 @@
+<section class="contact section">
+  <div class="contact__wrap wrap">
+    <div class="contact__form">
+      <form class="form" autocomplete="off" data-js-action="send-form" data-form="car">
+        <div class="form__title">Оставить заявку</div>
+        <p class="form__description">Мы свяжемся с вами в течении 5 минут</p>
+        <div class="form__wrap">
+          <div class="form__group">
+            <svg class="form__icon">
+              <use xlink:href="{{ 'assets/spritemap.svg#sprite-form-phone'|theme }}"></use>
+            </svg>
+            <input type="tel" name="user_phone" class="form__input" placeholder="+7 (___) ___-__-__" data-js="phone" />
+            <span class="form__error" data-error-for="user_phone"></span>
+          </div>
+          <div class="form__group">
+            <svg class="form__icon">
+              <use xlink:href="{{ 'assets/spritemap.svg#sprite-form-car'|theme }}"></use>
+            </svg>
+            <input type="text" name="user_car" class="form__input" placeholder="Марка" data-autocomplete data-type="car" />
+            <span class="form__error" data-error-for="user_car"></span>
+            <div class="form__dropdown">
+              <div class="form__dropdown-inner" data-dropdown-for="user_car"></div>
+            </div>
+          </div>
+          <div class="form__group">
+            <svg class="form__icon">
+              <use xlink:href="{{ 'assets/spritemap.svg#sprite-form-car'|theme }}"></use>
+            </svg>
+            <input type="text" name="user_model" class="form__input" placeholder="Модель" data-autocomplete data-type="model" />
+            <span class="form__error" data-error-for="user_model"></span>
+            <div class="form__dropdown">
+              <div class="form__dropdown-inner" data-dropdown-for="user_model"></div>
+            </div>
+          </div>
+        </div>
+        <div class="form__centered">
+          <p class="form__privacy">
+            Нажимая на кнопку, вы принимаете условия <a href="#!" class="form__privacy-link" data-js-action="open-modal" data-name="privacy">политики</a> обработки персональных данных.
+          </p>
+          <input type="hidden" name="user_name" value="Новая заявка" />
+          <input type="hidden" name="user_form" value="car" />
+          <button type="submit" class="button form__submit">Заказать сейчас!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+<div class="modal" id="modal">
+  <div class="modal__dialog" data-role="close-modal">
+    <div class="modal__content" data-modal="callback">
+      <button type="button" class="modal__close" data-role="close-modal">
+        <svg class="modal__close-icon">
+          <use xlink:href="{{ 'assets/spritemap.svg#sprite-close2'|theme }}"></use>
+        </svg>
+      </button>
+      <div class="modal__wrap">
+        <div class="modal__title">Обратный звонок</div>
+        <p class="modal__description">Мы свяжемся с вами в течении 5 минут</p>
+        {% partial "modal-form" %}
+      </div>
+    </div>
+    <div class="modal__content modal__content_privacy" data-modal="privacy">
+      <button type="button" class="modal__close" data-role="close-modal">
+        <svg class="modal__close-icon">
+          <use xlink:href="{{ 'assets/spritemap.svg#sprite-close2'|theme }}"></use>
+        </svg>
+      </button>
+      <div class="modal__wrap">
+        <div class="modal__title">Политика конфиденциальности</div>
+        {% content 'privacy.htm' %}
+      </div>
+    </div>
+    <div class="modal__content" data-modal="success">
+      <button type="button" class="modal__close" data-role="close-modal">
+        <svg class="modal__close-icon">
+          <use xlink:href="{{ 'assets/spritemap.svg#sprite-close2'|theme }}"></use>
+        </svg>
+      </button>
+      <div class="modal__wrap">
+        <div class="modal__success">
+          <div class="modal__success-icon">
+            <svg class="modal__success-check">
+              <use xlink:href="{{ 'assets/spritemap.svg#sprite-checkmark'|theme }}"></use>
+            </svg>
+          </div>
+          <div class="modal__success-text" data-js="success-text">Спасибо</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

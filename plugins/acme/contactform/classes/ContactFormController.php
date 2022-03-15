@@ -65,6 +65,8 @@ class ContactFormController extends Controller
         'user_phone' => $request->get('user_phone'),
         'user_email' => $request->get('user_email'),
         'user_message' => $request->get('user_message'),
+        'user_car' => $request->get('user_car'),
+        'user_model' => $request->get('user_model')
       ];
 
       //вставка в базу данных

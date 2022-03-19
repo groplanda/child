@@ -86,6 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
       slidesPerView: 2.8,
       centeredSlides: true,
       simulateTouch: false,
+      allowTouchMove: false,
+      onlyExternal:true,
       slideClass: 'gallery__slide',
       slideActiveClass: 'gallery__slide_active',
       slideNextClass: 'gallery__slide_next',

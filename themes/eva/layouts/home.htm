@@ -10,16 +10,14 @@ maxFeeds = 0
 feedType = "list"
 sortOrder = "asc"
 
-[galleries]
-galleryName = 1
-galleryType = "slider"
-
 [advantage advantage2]
 advantageName = 2
 
 [services]
 serviceName = 5
 servicesType = "list"
+
+[ImageCompareComponent]
 ==
 <!DOCTYPE html>
 <html lang="ru">
@@ -37,7 +35,7 @@ servicesType = "list"
       {% partial "contact" %}
       {% component 'feedbacklist' %}
       {% component 'advantage2::hero' %}
-      {% component 'galleries' %}
+      {% component 'ImageCompareComponent' %}
       {% partial "message" %}
     </main>
     <!-- Footer -->

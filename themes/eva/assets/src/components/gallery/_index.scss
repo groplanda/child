@@ -139,25 +139,70 @@
   }
 
   &__btn {
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    top: calc(50% - 20px);
+    z-index: 3;
+    background: $blue-color;
+    box-shadow: 11px 11px 40px 0 rgb(214 4 8 / 20%);
+    background: linear-gradient(90deg, $blue-color 0%, $blue-color 10%, $red-color 50%, $red-color 60%, $blue-color 90%, $blue-color 100%);
+    background-size: 200% auto;
+    transition: all .2s ease;
+
+    &:hover {
+      background-position: right center;
+    }
+
+    &_prev {
+      left: 30px;
+    }
+
+    &_next {
+      right: 30px;
+    }
+
+    @media(min-width: 768px) {
+      &_prev {
+        left: 40px;
+      }
+
+      &_next {
+        right: 40px;
+      }
+    }
+
+    @media(min-width: 992px) {
+      &_prev {
+        left: 60px;
+      }
+
+      &_next {
+        right: 60px;
+      }
+    }
 
     @media(min-width: 1200px) {
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
       width: 55px;
       height: 55px;
       border-radius: 27.5px;
       top: calc(50% - 27.5px);
-      z-index: 3;
-      background: $blue-color;
-      box-shadow: 11px 11px 40px 0 rgb(214 4 8 / 20%);
-      background: linear-gradient(90deg, $blue-color 0%, $blue-color 10%, $red-color 50%, $red-color 60%, $blue-color 90%, $blue-color 100%);
-      background-size: 200% auto;
-      transition: all .2s ease;
 
+      &_prev {
+        left: calc(50% - 470px);
+      }
+
+      &_next {
+        right: calc(50% - 470px);
+      }
+
+    }
+
+    @media(min-width: 1440px) {
       &_prev {
         left: calc(50% - 670px);
       }
@@ -165,18 +210,18 @@
       &_next {
         right: calc(50% - 670px);
       }
-
-      &:hover {
-        background-position: right center;
-      }
-
     }
   }
 
   &__btn-arrow {
     fill: $white-color;
-    width: 24px;
-    height: 24px;
+    width: 21px;
+    height: 21px;
+
+    @media(min-width: 1200px) {
+      width: 24px;
+      height: 24px;
+    }
   }
 
 }

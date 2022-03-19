@@ -1,0 +1,4 @@
+title: ImageComparies
+modelClass: Acme\Settings\Models\ImageCompare
+toolbar:
+    buttons: reorder_toolbar

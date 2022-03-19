@@ -16,7 +16,8 @@ class Plugin extends PluginBase
             'Acme\Settings\Components\Videos' => 'videos',
             'Acme\Settings\Components\PostList' => 'postlist',
             'Acme\Settings\Components\SinglePost' => 'singlepost',
-            'Acme\Settings\Components\PriceComponent' => 'pricecomponent'
+            'Acme\Settings\Components\PriceComponent' => 'pricecomponent',
+            'Acme\Settings\Components\ImageCompareComponent' => 'ImageCompareComponent'
         ];
     }
 

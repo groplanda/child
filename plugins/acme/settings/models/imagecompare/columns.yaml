@@ -1,0 +1,16 @@
+columns:
+    name:
+        label: Название
+        type: text
+        searchable: true
+        sortable: true
+    is_active:
+        label: 'Опубликовано?'
+        type: switch
+        searchable: true
+        sortable: true
+    sort_order:
+        label: 'Порядок сортировки'
+        type: number
+        searchable: true
+        sortable: true

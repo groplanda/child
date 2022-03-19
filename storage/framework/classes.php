@@ -122,4 +122,7 @@
   'RainLab\\Pages\\Widgets\\SnippetList' => 'plugins\\rainlab\\pages\\widgets\\SnippetList.php',
   'RainLab\\Pages\\Classes\\Menu' => 'plugins\\rainlab\\pages\\classes\\Menu.php',
   'RainLab\\Pages\\Classes\\Content' => 'plugins\\rainlab\\pages\\classes\\Content.php',
+  'acme\\settings\\Controllers\\imagecomparies' => 'plugins\\acme\\settings\\controllers\\imagecomparies.php',
+  'Acme\\Settings\\Models\\ImageCompare' => 'plugins\\acme\\settings\\models\\ImageCompare.php',
+  'Acme\\Settings\\Components\\ImageCompareComponent' => 'plugins\\acme\\settings\\components\\ImageCompareComponent.php',
 );

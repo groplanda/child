@@ -1,4 +1,4 @@
-{% set gallery = __SELF__.gallery %}
+{% set comparies = __SELF__.comparies %}
 <section class="gallery section" id="gallery">
   <div class="wrap gallery__wrap">
     <div class="title gallery__title">
@@ -8,13 +8,11 @@
     <div class="gallery__row">
       <div class="gallery__slider swiper" data-js="gallery-slider">
         <div class="swiper-wrapper gallery__slider-wrapper">
-          {% for image in gallery.gallery %}
-          {% set full = image.path %}
-          {% set poster = image.thumb(665, 430, {'mode': 'crop'}) %}
+          {% for compare in comparies %}
           <div class="swiper-slide gallery__slide">
             <div class="gallery__slide-link" data-js="image-compare">
-              <img src="{{ poster }}" alt="BEFORE" />
-              <img src="{{ poster }}" alt="AFTER" />
+              <img src="{{ compare.before_image|media|resize(665, 430, { mode: 'crop', quality: '90' }) }}" alt="BEFORE" />
+              <img src="{{ compare.after_image|media|resize(665, 430, { mode: 'crop', quality: '90' }) }}" alt="AFTER" />
             </div>
           </div>
           {% endfor %}

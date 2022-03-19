@@ -1,0 +1,10 @@
+name: ImageComparies
+form: $/acme/settings/models/imagecompare/fields.yaml
+modelClass: Acme\Settings\Models\ImageCompare
+defaultRedirect: acme/settings/imagecomparies
+create:
+    redirect: 'acme/settings/imagecomparies/update/:id'
+    redirectClose: acme/settings/imagecomparies
+update:
+    redirect: acme/settings/imagecomparies
+    redirectClose: acme/settings/imagecomparies

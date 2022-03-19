@@ -63,6 +63,7 @@
   },
   "dependencies": {
     "debounce": "^1.2.1",
+    "image-compare-viewer": "^1.5.0",
     "jquery.maskedinput": "^1.4.1",
     "lightbox2": "^2.11.3",
     "masonry-layout": "^4.2.2",

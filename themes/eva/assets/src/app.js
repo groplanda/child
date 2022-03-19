@@ -9,6 +9,7 @@ import { Modal } from './plugins/Modal';
 import { ContactForm } from './plugins/ContactForm';
 import { Cars } from './plugins/Cars';
 import { LoadReviews } from './plugins/LoadReviews';
+import ImageCompare from 'image-compare-viewer';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -84,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gallerySlider = new Swiper('[data-js="gallery-slider"]', {
       slidesPerView: 2.8,
       centeredSlides: true,
+      simulateTouch: false,
       slideClass: 'gallery__slide',
       slideActiveClass: 'gallery__slide_active',
       slideNextClass: 'gallery__slide_next',
@@ -94,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
       navigation: {},
       breakpoints: {
         320: {
-          slidesPerView: 1.5,
+          slidesPerView: 1.3,
         },
         576: {
           slidesPerView: 1.8,
@@ -119,6 +121,18 @@ document.addEventListener('DOMContentLoaded', () => {
       gallerySlider.slidePrev();
     })
 
+    const images = galleryID.querySelectorAll('[data-js="image-compare"]');
+
+    images.forEach(image => {
+      console.log(image);
+      new ImageCompare(image,{
+        fluidMode: true,
+        controlShadow: true,
+        addCircle: false,
+        addCircleBlur: true,
+      })
+      .mount();
+    })
   }
 
   new Modal('[data-js-action="open-modal"]', 'modal');

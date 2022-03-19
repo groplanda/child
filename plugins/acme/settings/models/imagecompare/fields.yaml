@@ -1,0 +1,23 @@
+fields:
+    name:
+        label: Имя
+        span: auto
+        type: text
+    is_active:
+        label: 'Опубликовано?'
+        span: auto
+        type: switch
+    before_image:
+        label: 'Фото "до"'
+        mode: image
+        imageWidth: '150'
+        imageHeight: '150'
+        span: auto
+        type: mediafinder
+    after_image:
+        label: 'Фото "после"'
+        mode: image
+        imageWidth: '150'
+        imageHeight: '150'
+        span: auto
+        type: mediafinder

@@ -27,7 +27,7 @@ navigation:
                 label: Отзывы
                 url: acme/settings/feedback
                 icon: icon-comment
-            side-menu-package:
-                label: 'Пакеты услуг'
-                url: acme/settings/prices
-                icon: icon-inbox
+            side-menu-images:
+                label: 'Картинки сравнения'
+                url: acme/settings/imagecomparies
+                icon: icon-file-image-o

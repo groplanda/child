@@ -40,5 +40,17 @@
         </div>
       </div>
     </div>
+    <div class="modal__content" data-modal="leave">
+      <button type="button" class="modal__close" data-role="close-modal">
+        <svg class="modal__close-icon">
+          <use xlink:href="{{ 'assets/spritemap.svg#sprite-close2'|theme }}"></use>
+        </svg>
+      </button>
+      <div class="modal__wrap">
+        <div class="modal__title">Не нашли то что нужно?</div>
+        <p class="modal__description">Оставьте заявку и мы с вами свяжемся!</p>
+        {% partial "modal-form" subject="Не нашли то что нужно" %}
+      </div>
+    </div>
   </div>
 </div>

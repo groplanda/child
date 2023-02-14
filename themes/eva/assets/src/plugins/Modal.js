@@ -6,7 +6,7 @@ export class Modal {
     this.$modals = this.$modalId.querySelectorAll('[data-modal]');
     this.$close = this.$modalId.querySelectorAll('[data-role="close-modal"]');
     this.activeModalClass = "modal__content_selected";
-
+    this.isOpenModal = true;
     this.init();
   }
 
@@ -25,6 +25,31 @@ export class Modal {
         this.closeModal();
       }
     })
+
+    document.addEventListener('mouseleave', event => {
+      if(event.clientY <= 0 || event.clientX <= 0 || (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight)) {
+        if (!this.isOpenModal) {
+          const offsetBody = this.getScrollBarWith() + "px";
+          if (this.openModal('leave')) {
+            document.body.classList.add("open-modal");
+            document.body.style.paddingRight = offsetBody;
+          }
+        }
+      }
+    })
+
+    window.addEventListener('scroll', () => {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        if (!this.isOpenModal) {
+          const offsetBody = this.getScrollBarWith() + "px";
+          if (this.openModal('leave')) {
+            document.body.classList.add("open-modal");
+            document.body.style.paddingRight = offsetBody;
+          }
+        }
+      }
+    })
+
   }
 
   hadleClick(event) {
@@ -65,6 +90,7 @@ export class Modal {
 
     this.$modalId.classList.add('modal_active');
     modal.classList.add(this.activeModalClass);
+    this.isOpenModal = true;
     return true;
   }
 

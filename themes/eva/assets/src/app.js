@@ -11,6 +11,8 @@ import { Cars } from './plugins/Cars';
 import { LoadReviews } from './plugins/LoadReviews';
 import ImageCompare from 'image-compare-viewer';
 
+Swiper.use([Navigation, Pagination]);
+
 document.addEventListener('DOMContentLoaded', () => {
 
   const mobileToggle = document.querySelector('[data-js-action="toggle-menu"]'),
@@ -135,6 +137,39 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .mount();
     })
+  }
+
+  const worksID = document.getElementById('works');
+
+  if (worksID) {
+
+    new Swiper('[data-slider="works"]', {
+      slidesPerView:5,
+      loop: true,
+      spaceBetween: 0,
+      pagination: {},
+      navigation: {
+        nextEl: '.works__btn_next',
+        prevEl: '.works__btn_prev',
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+        },
+        576: {
+          slidesPerView: 3,
+        },
+        992: {
+          slidesPerView: 3,
+        },
+        1200: {
+          slidesPerView: 4,
+        },
+        2100: {
+          slidesPerView: 5,
+        }
+      }
+    });
   }
 
   new Modal('[data-js-action="open-modal"]', 'modal');

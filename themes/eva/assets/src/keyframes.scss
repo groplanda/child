@@ -11,3 +11,18 @@
     display:none;
   }
 }
+
+@keyframes pulse-wa {
+  0% {
+    box-shadow: 0 0 0 0px rgba($green-color, 0), 0 0 0 0px rgba($green-color, 0);
+  }
+  40% {
+    box-shadow: 0 0 0 15px rgba($green-color, 0.2), 0 0 0 27px rgba($green-color, 0.12);
+  }
+  80% {
+    box-shadow: 0 0 0 15px rgba($green-color, 0), 0 0 0 27px rgba($green-color, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0px rgba($green-color, 0), 0 0 0 27px rgba($green-color, 0);
+  }
+}

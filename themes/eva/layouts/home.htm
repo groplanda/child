@@ -18,6 +18,10 @@ serviceName = 5
 servicesType = "list"
 
 [ImageCompareComponent]
+
+[galleries]
+galleryName = 1
+galleryType = "grid"
 ==
 <!DOCTYPE html>
 <html lang="ru">
@@ -36,6 +40,7 @@ servicesType = "list"
       {% component 'feedbacklist' %}
       {% component 'advantage2::hero' %}
       {% component 'ImageCompareComponent' %}
+      {% component 'galleries' %}
       {% partial "message" %}
     </main>
     <!-- Footer -->

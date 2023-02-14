@@ -311,6 +311,43 @@ ol li {
   }
 }
 
+.widget-whatsapp {
+  bottom: 30px;
+  right: 15px;
+  position: fixed;
+  width: 45px;
+  height: 45px;
+  border-radius: 22.5px;
+  background: $green-color;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  animation: pulse-wa 3s linear infinite;
+
+  @media(min-width: 768px) {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    bottom: 40px;
+    right: 30px;
+  }
+
+  &__ico {
+    width: 16px;
+    height: 16px;
+    fill: $white-color;
+
+    @media(min-width: 992px) {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
 
 @import './components/header';
 @import './components/intro';
@@ -325,6 +362,7 @@ ol li {
 @import './components/service';
 @import './components/modal-form';
 @import './components/footer';
+@import './components/works';
 @import './ligthbox.css';
 @import './components/loading';
 @import 'image-compare-viewer/dist/image-compare-viewer.min.css';

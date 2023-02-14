@@ -100,3 +100,11 @@ description = "Footer"
     </div>
   </div>
 </footer>
+
+{% if this.theme.whatsapp %}
+<a class="widget-whatsapp" href="whatsapp://send?phone=+{{this.theme.whatsapp}}" title="whatsapp">
+  <svg class="widget-whatsapp__ico">
+    <use xlink:href="{{ 'assets/spritemap.svg#sprite-whatsapp'|theme }}"></use>
+  </svg>
+</a>
+{% endif %}

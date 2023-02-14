@@ -1,15 +1,43 @@
 {% set gallery = __SELF__.gallery %}
-<div class="position-center-center">
-  <h3>{{ gallery.title }}</h3>
-</div>
-<ul id="{{ __SELF__.id }}">
-  {% for image in gallery.gallery %}
-  {% set full = image.thumb(800, false) %}
-  {% set poster = image.thumb(250, 200, {'mode': 'crop'}) %}
-  <li>
-    <a data-lighter href="{{ full }}">
-      <img src="{{ poster }}" alt="{{image.title}}" >
-    </a>
-  </li>
-  {% endfor %}
-</ul>
+
+<section class="works section" id="works">
+  <div class="wrap works__wrap">
+    <div class="wrap">
+      <div class="title works__title">
+        <div class="title__ghost">Наши работы</div>
+        <h2 class="title__text">{{gallery.title}}<span class="title__text-dot">.</span></h2>
+      </div>
+    </div>
+    <div class="works__row">
+      <div class="works__slider swiper" data-slider="works">
+        <div class="swiper-wrapper works__slider-wrapper">
+          {% for image in gallery.gallery %}
+          {% set full = image.path %}
+          {% set poster = image.thumb(665, 430, {'mode': 'crop'}) %}
+          <div class="swiper-slide works__slide">
+            <a href="{{full}}" class="works__slide-link" data-lightbox="roadtrip-{{__SELF__.id}}">
+              <picture>
+                <source srcset="{{poster}}">
+                <img src="{{poster}}" alt="" class="works__slide-image" />
+              </picture>
+              <svg class="works__item-plus">
+                <use xlink:href="{{ 'assets/spritemap.svg#sprite-plus'|theme }}"></use>
+              </svg>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+        <button type="button" class="works__btn button button_theme works__btn_prev">
+          <svg class="works__btn-arrow">
+            <use xlink:href="{{ 'assets/spritemap.svg#sprite-arrow-prev'|theme }}"></use>
+          </svg>
+        </button>
+        <button type="button" class="works__btn button button_theme works__btn_next">
+          <svg class="works__btn-arrow">
+            <use xlink:href="{{ 'assets/spritemap.svg#sprite-arrow-next'|theme }}"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

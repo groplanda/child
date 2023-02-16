@@ -5,29 +5,31 @@
       <div class="title__ghost">Примеры работ</div>
       <h2 class="title__text">Галерея<span class="title__text-dot">.</span></h2>
     </div>
-    <div class="gallery__row">
-      <div class="gallery__slider swiper" data-js="gallery-slider">
-        <div class="swiper-wrapper gallery__slider-wrapper">
-          {% for compare in comparies %}
-          <div class="swiper-slide gallery__slide">
-            <div class="gallery__slide-link" data-js="image-compare">
-              <img src="{{ compare.before_image|media|resize(665, 430, { mode: 'crop', quality: '90' }) }}" alt="BEFORE" />
-              <img src="{{ compare.after_image|media|resize(665, 430, { mode: 'crop', quality: '90' }) }}" alt="AFTER" />
+    <div class="gallery__group">
+      <div class="gallery__row">
+        <div class="gallery__slider swiper" data-js="gallery-slider">
+          <div class="swiper-wrapper gallery__slider-wrapper">
+            {% for compare in comparies %}
+            <div class="swiper-slide gallery__slide">
+              <div class="gallery__slide-link" data-js="image-compare">
+                <img src="{{ compare.before_image|media|resize(665, 430, { mode: 'crop', quality: '90' }) }}" alt="BEFORE" />
+                <img src="{{ compare.after_image|media|resize(665, 430, { mode: 'crop', quality: '90' }) }}" alt="AFTER" />
+              </div>
             </div>
+            {% endfor %}
           </div>
-          {% endfor %}
         </div>
-        <button type="button" class="gallery__btn gallery__btn_prev" data-js-action="prev-slide">
-          <svg class="gallery__btn-arrow">
-            <use xlink:href="{{ 'assets/spritemap.svg#sprite-arrow-prev'|theme }}"></use>
-          </svg>
-        </button>
-        <button type="button" class="gallery__btn gallery__btn_next" data-js-action="next-slide">
-          <svg class="gallery__btn-arrow">
-            <use xlink:href="{{ 'assets/spritemap.svg#sprite-arrow-next'|theme }}"></use>
-          </svg>
-        </button>
       </div>
+      <button type="button" class="gallery__btn gallery__btn_prev" data-js-action="prev-slide">
+        <svg class="gallery__btn-arrow">
+          <use xlink:href="{{ 'assets/spritemap.svg#sprite-arrow-prev'|theme }}"></use>
+        </svg>
+      </button>
+      <button type="button" class="gallery__btn gallery__btn_next" data-js-action="next-slide">
+        <svg class="gallery__btn-arrow">
+          <use xlink:href="{{ 'assets/spritemap.svg#sprite-arrow-next'|theme }}"></use>
+        </svg>
+      </button>
     </div>
   </div>
 </section>

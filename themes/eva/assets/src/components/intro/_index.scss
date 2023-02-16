@@ -121,25 +121,38 @@
   }
 
   &__price-sale {
-    margin-left: 32px;
     color: #808080;
-    font-size: 24px;
+    font-size: 20px;
     text-decoration: line-through;
     margin-bottom: 20px;
+
+    @media(min-width: 768px) {
+      font-size: 24px;
+      margin-left: 32px;
+    }
   }
 
   &__price-old {
     display: flex;
     align-items: flex-end;
-    font-size: 36px;
+    font-size: 26px;
     font-weight: 700;
+
+    @media(min-width: 768px) {
+      font-size: 36px;
+    }
   }
 
   &__price-small {
     margin-right: 10px;
-    font-size: 18px;
-    line-height: 10px;
+    font-size: 14px;
+    line-height: 24px;
     font-weight: 400;
+
+    @media(min-width: 768px) {
+      font-size: 18px;
+      line-height: 36px;
+    }
   }
 
   &__bg {

@@ -12,6 +12,7 @@
     padding: 0;
     flex-direction: column;
     align-items: center;
+    position: relative;
   }
 
   &__title {
@@ -29,6 +30,11 @@
     @media(min-width: 1200px) {
       max-width: 1200px;
     }
+  }
+
+  &__group {
+    width: 100%;
+    position: relative;
   }
 
   &__row {
@@ -146,71 +152,43 @@
     width: 40px;
     height: 40px;
     border-radius: 20px;
-    top: calc(50% - 20px);
+    top: 100%;
     z-index: 3;
     background: $blue-color;
     box-shadow: 11px 11px 40px 0 rgb(214 4 8 / 20%);
     background: linear-gradient(90deg, $blue-color 0%, $blue-color 10%, $red-color 50%, $red-color 60%, $blue-color 90%, $blue-color 100%);
     background-size: 200% auto;
     transition: all .2s ease;
+    margin-top: 5px;
 
     &:hover {
       background-position: right center;
     }
 
     &_prev {
-      left: 30px;
+      left: calc(50% - 50px);
     }
 
     &_next {
-      right: 30px;
-    }
-
-    @media(min-width: 768px) {
-      &_prev {
-        left: 40px;
-      }
-
-      &_next {
-        right: 40px;
-      }
-    }
-
-    @media(min-width: 992px) {
-      &_prev {
-        left: 60px;
-      }
-
-      &_next {
-        right: 60px;
-      }
+      right: calc(50% - 50px);
     }
 
     @media(min-width: 1200px) {
       width: 55px;
       height: 55px;
       border-radius: 27.5px;
-      top: calc(50% - 27.5px);
+      margin-top: 30px;
 
       &_prev {
-        left: calc(50% - 470px);
+        left: calc(50% - 60px);
       }
 
       &_next {
-        right: calc(50% - 470px);
+        right: calc(50% - 60px);
       }
 
     }
 
-    @media(min-width: 1440px) {
-      &_prev {
-        left: calc(50% - 670px);
-      }
-
-      &_next {
-        right: calc(50% - 670px);
-      }
-    }
   }
 
   &__btn-arrow {

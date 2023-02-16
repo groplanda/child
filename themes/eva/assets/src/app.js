@@ -128,7 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const images = galleryID.querySelectorAll('[data-js="image-compare"]');
 
     images.forEach(image => {
-      console.log(image);
       new ImageCompare(image,{
         fluidMode: true,
         controlShadow: true,
@@ -137,6 +136,30 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .mount();
     })
+
+    updateButtonOffset();
+
+
+    window.addEventListener('resize', updateButtonOffset)
+
+    function updateButtonOffset() {
+      setTimeout(() => {
+
+        const images = gallerySlider.wrapperEl.querySelectorAll('.swiper-slide');
+        const list = []
+
+        for (let index = 0; index < images.length; index++) {
+          const image = images[index];
+          list.push(image.offsetHeight)
+        }
+
+        const max = Math.max.apply(null, list);
+
+        nextBtn.style.top = max + 'px';
+        prevBtn.style.top = max + 'px';
+
+      }, 500);
+    }
   }
 
   const worksID = document.getElementById('works');

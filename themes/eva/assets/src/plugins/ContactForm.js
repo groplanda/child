@@ -42,6 +42,8 @@ export class ContactForm {
       const trigger = this.createTrigger();
       document.body.append(trigger);
 
+      ym(88139097,'reachGoal','zayavka');
+
       new Modal('[data-js-action="open-modal"]', 'modal');
 
       trigger.click();

@@ -1,4 +1,15 @@
 description = "Meta tags"
+
+[viewBag]
+==
+<?php
+function onStart()
+{
+    $styleAsset = 'assets/dist/css/app.css';
+    $lastUpdate = filemtime($this->theme->getPath() . '/' . $styleAsset);
+    $this['stylesheet'] = sprintf('%s?v=%s', $this->controller->themeUrl($styleAsset), $lastUpdate);
+}
+?>
 ==
 <head>
   <meta charset="utf-8">
@@ -14,6 +25,6 @@ description = "Meta tags"
   <meta property="og:url" content="{{ url('/') }}">
   <link rel="image_src" href="{{ 'assets/images/logo.png'|theme }}">
   <link rel="icon" type="image/png" href="{{ this.theme.site_favicon|media|resize(32, 32) }}">
-  <link href="{{ 'assets/dist/css/app.css'|theme }}" rel="stylesheet" />
+  <link href="{{stylesheet}}" rel="stylesheet" />
   {% styles %}
 </head>

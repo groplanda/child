@@ -1,5 +1,12 @@
 description = "Script tags"
 ==
-<script src="{{ 'assets/dist/js/app.js'|theme }}"></script>
-{% framework extras %}
-{% scripts %}
+<?php
+function onStart()
+{
+    $scriptAsset = 'assets/dist/js/app.js';
+    $lastUpdate = filemtime($this->theme->getPath() . '/' . $scriptAsset);
+    $this['scripts'] = sprintf('%s?v=%s', $this->controller->themeUrl($scriptAsset), $lastUpdate);
+}
+?>
+==
+<script src="{{scripts}}"></script>

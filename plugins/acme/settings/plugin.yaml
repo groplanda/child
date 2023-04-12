@@ -31,3 +31,7 @@ navigation:
                 label: 'Картинки сравнения'
                 url: acme/settings/imagecomparies
                 icon: icon-file-image-o
+            side-menu-slider:
+                label: Промо
+                url: acme/settings/sliders
+                icon: icon-sliders

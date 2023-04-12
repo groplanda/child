@@ -1,12 +1,13 @@
 fields:
     title:
         label: Заголовок
-        span: auto
+        span: full
         type: text
     subtitle:
-        label: Подзаголовок
-        span: auto
-        type: text
+        label: Описание
+        size: large
+        span: full
+        type: textarea
 tabs:
     fields:
         image:
@@ -23,8 +24,22 @@ tabs:
             type: text
             tab: Изображение
         body:
-            label: Описание
-            size: large
+            label: Свойства
+            prompt: Добавить
+            style: default
             span: full
-            type: textarea
-            tab: Текст
+            type: repeater
+            tab: Характеристики
+            form:
+                fields:
+                    ico:
+                        label: Иконка
+                        mode: image
+                        imageWidth: '75'
+                        imageHeight: '75'
+                        span: auto
+                        type: mediafinder
+                    value:
+                        label: Описание
+                        span: auto
+                        type: text

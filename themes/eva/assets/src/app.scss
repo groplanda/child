@@ -239,6 +239,10 @@ ol li {
   @media(min-width: 1200px) {
     margin-top: 80px;
   }
+
+  &_promo {
+    margin-top: 0;
+  }
 }
 
 .title {
@@ -365,4 +369,5 @@ ol li {
 @import './components/works';
 @import './ligthbox.css';
 @import './components/loading';
+@import './components/promo';
 @import 'image-compare-viewer/dist/image-compare-viewer.min.css';

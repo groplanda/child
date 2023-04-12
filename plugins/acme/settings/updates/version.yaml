@@ -81,3 +81,6 @@
 1.0.28:
     - 'Created table acme_settings_image_compare'
     - builder_table_create_acme_settings_image_compare.php
+1.0.29:
+    - 'Updated table acme_settings_slider'
+    - builder_table_update_acme_settings_slider.php

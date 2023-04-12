@@ -1,0 +1,20 @@
+description = "Promo layout"
+==
+<!DOCTYPE html>
+<html lang="ru">
+  {% partial "meta" %}
+  <body>
+    <!-- Header -->
+    {% partial "loading" %}
+    <!-- Content -->
+    <main class="main main_promo">
+     {% page %}
+    </main>
+    <!-- Footer -->
+    {% partial "modal" %}
+    {% partial "scripts" %}
+    {% if this.theme.site_metrika|length > 0 %}
+    {{ this.theme.site_metrika|raw }}
+    {% endif %}
+  </body>
+</html>

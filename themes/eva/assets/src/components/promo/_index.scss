@@ -8,19 +8,19 @@
     justify-content: center;
     padding-bottom: 20px;
     padding-top: 100px;
+    min-height: 100vh;
 
     @media(min-width: 768px) {
         padding-top: 120px;
     }
 
     @media(min-width: 1200px) {
-        min-height: 100vh;
         padding-top: 0;
     }
 
     &::before {
         content: '';
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.75);
         position: fixed;
         top: 0;
         left: 0;
